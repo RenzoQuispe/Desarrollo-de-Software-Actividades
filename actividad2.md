@@ -1,32 +1,84 @@
-### **Actividad 2: Del código a la producción: Infraestructura, contenedores, despliegue y observabilidad**
+##  **Actividad 2: Del código a la producción: Infraestructura, contenedores, despliegue y observabilidad**
 
-#### Tareas Teóricas
+### Tareas Teóricas
 
-##### - Investigar una herramienta de IaC (p. ej. Terraform) y describir cómo organiza sus módulos.
+#### - Investigar una herramienta de IaC (p. ej. Terraform) y describir cómo organiza sus módulos.
 Terraform: Es una herramienta que sirve para automatizar, configurar y administrar nuestra infraestructura de manera sencilla. Organiza dicha configuración mediante módulos. Es de codigo abierto y es desarrollado por HashiCorp
-Los modulos sirven para enpaquetar y reutilizar configuraciones de recursos.
-##### - Proponer la estructura de archivos y directorios para un proyecto hipotético que incluya tres módulos: network, database y application. Justificar la jerarquía elegida.
--
-##### - Describir un flujo simple de despliegue donde un desarrollador hace un cambio en el código, se construye una nueva imagen Docker y se actualiza un Deployment de Kubernetes.
--
-##### - Explicar las ventajas de usar Kubernetes para escalar una aplicación en un evento de alto tráfico.
+Los modulos sirven para empaquetar y reutilizar configuraciones de recursos, son separados por funcionalidad.
+#### - Proponer la estructura de archivos y directorios para un proyecto hipotético que incluya tres módulos: network, database y application. Justificar la jerarquía elegida.
+infraestructura
+    main.tf        # Conecta los modulos
+    variables.tf   # Variables globales
+    outputs.tf     # Outputs globales
+    modulos
+        red            
+            main.tf
+            variables.tf   #variables que necesita el modulo
+            outputs.tf     #output "local"
+        bd
+            main.tf
+            variables.tf   #variables que necesita el modulo
+            outputs.tf
+        aplicacion
+            main.tf
+            variables.tf   #variables que necesita el modulo
+            outputs.tf
+Esta forma de organizacion es clara y ordenada, ademas cada modulo es reutiliable. 
+#### - Describir un flujo simple de despliegue donde un desarrollador hace un cambio en el código, se construye una nueva imagen Docker y se actualiza un Deployment de Kubernetes.
+- Se hace un cambio en el codigo
+- Se actualiza el repositorio remoto
+- Construccion de una nueva imagen docker 
+- Se guarda la nueva imagen docker (Docker Hub)
+- Se actualiza el deployment de Kubernetes
+- kubernetes reemplaza los contenedores antiguos
+#### - Explicar las ventajas de usar Kubernetes para escalar una aplicación en un evento de alto tráfico.
 - Reparte el trafico de manera eficiente.
-- Permite agregar mas recursos cuando sea necesario  
+- Permite agregar mas recursos cuando sea necesario 
+- Si un contenedor falla, kubernetes puede reemplazarlo automaticamente 
 - Permite escalar la aplicacion automaticamente cuando hay mas trafico.
-##### - Investigar y describir cómo Prometheus y Grafana se integran con Kubernetes para monitorear los contenedores y el cluster.
-
-##### - Proponer un set de métricas y alertas mínimas para una aplicación web (por ejemplo, latencia de peticiones, uso de CPU/memoria, tasa de errores).
-
-##### - Explicar la diferencia entre entrega continua (continuous delivery) y despliegue continuo (continuous deployment).
+#### - Investigar y describir cómo Prometheus y Grafana se integran con Kubernetes para monitorear los contenedores y el cluster.
+Prometheus recoge las caracteristicas y metricas de los contenedores de Kubernetes(Uso de CPU y memoria, Detalles sobre las peticiones, etc).
+Grafana sirve para mostrar visualmente mediante graficos las metricas recogidas por Prometheus.
+Ambos se pueden desplegar como contenedores dentro del cluster y de esta manera trabajar juntos.
+Asi trabajando juntos son una gran herramienta de monitorio en tiempo real.
+#### - Proponer un set de métricas y alertas mínimas para una aplicación web (por ejemplo, latencia de peticiones, uso de CPU/memoria, tasa de errores).
+Métricas
+- Uso de memoria 
+- Cuanto tarda en responder la aplicacion (latencia de peticiones)
+- Cuanto procesamiento usa la aplicacion web
+- Porcentaje de respuesta con errores
+Alerta Mínimas
+- Uso de memoria: Mas de 80%
+- Tiempo de respuesta mayor a un segundo
+- Mas de 10% de errores en las respuestas
+#### - Explicar la diferencia entre entrega continua (continuous delivery) y despliegue continuo (continuous deployment).
 En entrega continua, el software se prepara automaticamente para produccion, pero el despliegue no es automatico, hay mas control de las nuevas versiones del software. En cambio en el despliegue continuo las pruebas y el despliegue es automatico.
 ##### - Describir la relevancia de implementar pruebas automáticas (unitarias, de integración, de seguridad) dentro del pipeline.
+- Con las pruebas unitarias hacemos una verificacion ordenada de errores de tal manera que es mas facil entender los errores
+- Con las pruebas de integracion verficacmos que los componentes trabajan bien con otros componentes
+- Deteccion de debilidades del sistema (Seguridad)
+- Evitar errores de la aplicacion en producción.
+- Deteccion rapida de errores.
 
-#### Evaluación de la teoría
-##### - Cada estudiante deberá redactar un informe sobre la importancia de IaC, contenedores, Kubernetes, observabilidad y CI/CD para la entrega ágil y confiable de software.
-##### - Identificar riesgos y desafíos (p.e. sobrecarga cognitiva, necesidad de capacitación, configuración de seguridad).    
-#### Discusión en grupo
-##### - Debatir cómo la adopción de estas prácticas puede acelerar el “time to market” de un producto.
-##### - Comentar ejemplos reales de cómo las grandes empresas usan estas herramientas para manejar volúmenes altos de tráfico y cambios frecuentes en sus aplicaciones.
-#### Trabajo colaborativo
-##### - En grupos, diseñar un flujo teórico que combine IaC (para crear recursos en la nube), despliegue de contenedores en Kubernetes y monitoreo con Prometheus/Grafana.
-##### - Presentar el flujo en un diagrama que incluya cada paso desde el commit hasta la visualización de métricas en tiempo real.
+### Evaluación de la teoría
+#### - Cada estudiante deberá redactar un informe sobre la importancia de IaC, contenedores, Kubernetes, observabilidad y CI/CD para la entrega ágil y confiable de software.
+
+#### - Identificar riesgos y desafíos (p.e. sobrecarga cognitiva, necesidad de capacitación, configuración de seguridad).  
+- Es importante una adecuada capacitacion para dominar las herramientas.
+- Puede generar una "sobrecarga cognitiva" al principio ya que en el proceso se usan muchas tecnologias.  
+- Es importante una adecuada configuracion de seguridad en las constantes implementaciones.
+
+### Trabajo colaborativo
+#### - En grupos, diseñar un flujo teórico que combine IaC (para crear recursos en la nube), despliegue de contenedores en Kubernetes y monitoreo con Prometheus/Grafana.
+- Uno de los desarrolladores hace un commit en el repositorio(Github)
+- Con Github Actions inicia el pipeline
+  - Se construye la imagen docker
+  - Pruebas unitarias y conjuntas en el contenedor
+  - Busqueda de fallas de seguridad
+- Si necesitamos cambios en la infraestructura usamos un script de Terraform
+- Nuevo despligue en Kubernetes usando la nueva imagen
+- Prometheus recoge metricas de los contenedores
+- Con Grafana mostramos los datos a tiempo real, se activan la alertas si hay errores
+- Un equipo se encarga del monitoreo constante
+#### - Presentar el flujo en un diagrama que incluya cada paso desde el commit hasta la visualización de métricas en tiempo real.
+![](imagenes/DSFlujoTeorico1.drawio.png)
