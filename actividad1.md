@@ -1,4 +1,4 @@
-## **Actividad: Introducción a DevOps **
+##  **Actividad 1: Introducción a DevOps**
 
 ### Parte 1: Comprender los principios fundamentales de DevOps y diferenciar qué es y qué no es DevOps.
 
