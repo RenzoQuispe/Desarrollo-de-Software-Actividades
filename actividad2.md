@@ -63,6 +63,15 @@ En entrega continua, el software se prepara automaticamente para produccion, per
 ### Evaluación de la teoría
 #### - Cada estudiante deberá redactar un informe sobre la importancia de IaC, contenedores, Kubernetes, observabilidad y CI/CD para la entrega ágil y confiable de software.
 
+Para entregar software de forma rápida y segura se utilizan herramientas modernas que nos ayudan automatizar tareas, escalar fácilmente(escalabilidad) y monitorear en tiempo real(observabilidad). Se detallara la importancia de las herramientas estudiadas:
+
+- IaC: Permite definir y configurar servidores, redes y otros recursos con archivos de texto. Terraform es un ejemplo de herramienta IaC que organiza la infraestructura en módulos reutilizables. Esto mejora el orden, la automatización y facilita la colaboración entre equipos.
+- Contenedores: Los contenedores empaquetan todo lo que necesita una aplicación para funcionar. Con ellos las aplicaciones se ejecutan en cualquier entorno, esto evita errores y hace mas facil el despliegue.
+- Kubernetes: Es un orquestador de contenedores. Permite distribuir el tráfico, escalar automáticamente cuando hay más usuarios y recuperar contenedores si fallan. Todo esto sin intervención manual, haciendo que la aplicación esté siempre disponible.
+- Observabilidad: Prometheus recolecta metricas del sistema, como uso de CPU, memoria y errores y con Grafana se muestra dicha informacion en gráficos en tiempo real. Juntos permiten monitorear el estado de la aplicación y activar alertas cuando hay errores.
+- CI/CD (Integración y Despliegue Continuo):
+Automatiza desde que el desarrollador sube un cambio hasta que se despliega en producción. Incluye pruebas automáticas (unitarias, integración y seguridad), creación de imágenes Docker y despliegue en Kubernetes. Esto reduce errores, acelera las entregas y mejora la calidad del software.
+
 #### - Identificar riesgos y desafíos (p.e. sobrecarga cognitiva, necesidad de capacitación, configuración de seguridad).  
 - Es importante una adecuada capacitacion para dominar las herramientas.
 - Puede generar una "sobrecarga cognitiva" al principio ya que en el proceso se usan muchas tecnologias.  

@@ -38,7 +38,7 @@ Principalemente la importancia de diseño y creacion de infraestructuras y uso d
 ### Trabajo grupal
 
 1. **Formación de equipos:**  
-   Formen grupos de hasta **3 integrantes**. Lean las lecturas asignadas y analicen los conceptos clave de DevOps y DevSecOps.  
+   Formen grupos de hasta 3 integrantes. Lean las lecturas asignadas y analicen los conceptos clave de DevOps y DevSecOps.  
 2. **Distribución del trabajo:**  
    - Un integrante lidera la lectura.  
    - Otro toma notas y sintetiza la información.  
