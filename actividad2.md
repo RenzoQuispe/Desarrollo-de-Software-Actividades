@@ -8,8 +8,6 @@ Los modulos sirven para empaquetar y reutilizar configuraciones de recursos, son
 #### - Proponer la estructura de archivos y directorios para un proyecto hipotético que incluya tres módulos: network, database y application. Justificar la jerarquía elegida.
 infraestructura
     main.tf        # Conecta los modulos
-    variables.tf   # Variables globales
-    outputs.tf     # Outputs globales
     modulos
         red            
             main.tf
@@ -69,7 +67,7 @@ Para entregar software de forma rápida y segura se utilizan herramientas modern
 - Contenedores: Los contenedores empaquetan todo lo que necesita una aplicación para funcionar. Con ellos las aplicaciones se ejecutan en cualquier entorno, esto evita errores y hace mas facil el despliegue.
 - Kubernetes: Es un orquestador de contenedores. Permite distribuir el tráfico, escalar automáticamente cuando hay más usuarios y recuperar contenedores si fallan. Todo esto sin intervención manual, haciendo que la aplicación esté siempre disponible.
 - Observabilidad: Prometheus recolecta metricas del sistema, como uso de CPU, memoria y errores y con Grafana se muestra dicha informacion en gráficos en tiempo real. Juntos permiten monitorear el estado de la aplicación y activar alertas cuando hay errores.
-- CI/CD (Integración y Despliegue Continuo):
+- CI/CD:
 Automatiza desde que el desarrollador sube un cambio hasta que se despliega en producción. Incluye pruebas automáticas (unitarias, integración y seguridad), creación de imágenes Docker y despliegue en Kubernetes. Esto reduce errores, acelera las entregas y mejora la calidad del software.
 
 #### - Identificar riesgos y desafíos (p.e. sobrecarga cognitiva, necesidad de capacitación, configuración de seguridad).  
