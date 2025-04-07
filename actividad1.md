@@ -21,7 +21,6 @@ Los equipo autonomos tienen la posibilidad de tomar decisiones sin depender de o
 #### 2. Preguntas de reflexión  
 
 1. **¿Qué significa "desplazar a la izquierda" en el contexto de DevSecOps y por qué es importante?**  
-
 2. **Explica cómo IaC mejora la consistencia y escalabilidad en la gestión de infraestructuras.**  
 IaC mejora la consistencia porque define la infraestrucutura de una aplicacion en un archivos de configuracion de tal manera que es portable y reproducible en varios entornos. Ademas mejora la escalibilidad ya que dicha infraestructura puede ser modificada facilmente cambiando los archivos de configuracion, asimismo la descomposicion de la infraestructa en modulo hace mas facil la gestion y escalado.
 3. **¿Cuál es la diferencia entre monitoreo y observabilidad? ¿Por qué es crucial la observabilidad en sistemas complejos?**  
@@ -30,7 +29,7 @@ La observabilidad en sistemas complejos es importante porque permite detectar pr
 4. **¿Cómo puede la experiencia del desarrollador impactar el éxito de DevOps en una organización?**  
 Un desarrollador con conocimientos y experiencia con los principios de DevOps, las herramientas que se usan y seguridad hace el proceso que el proceso de desarrollo mas rapido y seguro, ademas sabe sobre la importancia de la colaboracion entre equipos de desarrollo.  
 5. **Describe cómo InnerSource puede ayudar a reducir silos dentro de una organización.**  
-
+Esta tipo de practicas de codigo abierto consiste en compartir codigo y conocimiento entre desarrolladores, sin practicas promueven mayor colaboracion y eficiencia entre equipos.
 6. **¿Qué rol juega la ingeniería de plataformas en mejorar la eficiencia y la experiencia del desarrollador?**  
 Principalemente la importancia de diseño y creacion de infraestructuras y uso de herramientas de observabilidad para dichas infraestructuras (que en conjunto funcionan como una ingenieria de plataformas) es facilitar el desarrollo y trabajar de forma mas eficiente y segura.
 ---
@@ -48,3 +47,6 @@ Principalemente la importancia de diseño y creacion de infraestructuras y uso d
 4. **Presentación y conclusiones:**  
    Reúnanse con otros grupos y compartan sus reflexiones. Debatan cómo la implementación de estas prácticas puede transformar un entorno de desarrollo y operaciones.  
 ---
+
+Presentación PPT:
+[Ver ppt de la exposicion](/presentaciones/DS_Actividad1.pdf)
