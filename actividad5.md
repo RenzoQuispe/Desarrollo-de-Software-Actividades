@@ -44,11 +44,11 @@ En esta actividad, exploraremos el proceso de fusionar dos ramas en Git utilizan
 ![](imagenes/actividad5/ejercicio1_3.PNG)
 ![](imagenes/actividad5/ejercicio1_4.PNG)
 ### Ejercicio 2: Usando fusiones automáticas y revertir fusiones
-![](imagenes/actividad5/ejercicio2_1.PNG)
-![](imagenes/actividad5/ejercicio2_2.PNG)
-![](imagenes/actividad5/ejercicio2_3.PNG)
+![](imagenes/actividad5/ejercicio2_1.png)
+![](imagenes/actividad5/ejercicio2_2.png)
+![](imagenes/actividad5/ejercicio2_3.png)
 ### Ejercicio 3: Fusión remota en un repositorio colaborativo
-![](imagenes/actividad5/ejercicio3_1.PNG)
-![](imagenes/actividad5/ejercicio3_2.PNG)
+![](imagenes/actividad5/ejercicio3_1.png)
+![](imagenes/actividad5/ejercicio3_2.png)
 ### Ejercicio final: flujo de trabajo completo
 
