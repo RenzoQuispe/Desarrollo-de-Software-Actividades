@@ -51,4 +51,19 @@ En esta actividad, exploraremos el proceso de fusionar dos ramas en Git utilizan
 ![](imagenes/actividad5/ejercicio3_1.png)
 ![](imagenes/actividad5/ejercicio3_2.png)
 ### Ejercicio final: flujo de trabajo completo
-
+Crea un proyecto con tres ramas: main, feature1, y feature2.
+![](imagenes/actividad5/ef1.png)
+Realiza varios cambios en feature1 y feature2 y simula colaboraciones paralelas.
+![](imagenes/actividad5/ef2.png)
+Realiza fusiones utilizando diferentes métodos:
+Fusiona feature1 con main utilizando git merge --ff
+![](imagenes/actividad5/ef3.png)
+Fusiona feature2 con main utilizando git merge --no-ff
+![](imagenes/actividad5/ef4.png)
+Haz una rama adicional llamada feature3 y aplasta sus commits utilizando git merge --squash
+![](imagenes/actividad5/ef5.png)
+![](imagenes/actividad5/ef6.png)
+Revisa el historial para entender cómo los diferentes métodos de fusión afectan el árbol de commits.
+![](imagenes/actividad5/ef7.png)
+- Compara los resultados y discute con tus compañeros de equipo cuál sería la mejor estrategia de fusión para proyectos más grandes.
+Para Proyectos grandes es mas util el merge no-ff porque cuando estamos trabajando con varios desarrolladores los conflictos en el codigo son constantes, el merge squash son utiles para mantener el historial de commits mas ordenado y cuando hacemos constantesmente multiples commits. El merge ff por su caracteristica de "desplazar el head" es mas util en proyectos personales o de pocos desarrolladores.
