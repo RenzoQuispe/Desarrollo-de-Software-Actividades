@@ -15,6 +15,7 @@ Orden en el desarrollo colaborativo, de tal manera que cada uno trabaja en su im
 - Revisa el uso de ramas y merges para ver cómo Git maneja múltiples líneas de desarrollo.
 ![](imagenes/actividad4/ejercicio2_5.PNG)
 ![](imagenes/actividad4/ejercicio3_2.PNG)
+
 ### Ejercicio 1: Manejo avanzado de ramas y resolución de conflictos
 ![](imagenes/actividad4/ejercicio1_1.PNG)
 ![](imagenes/actividad4/ejercicio1_2.PNG)
