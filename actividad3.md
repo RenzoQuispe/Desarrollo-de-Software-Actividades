@@ -6,12 +6,13 @@
    - (a) ¿Qué problemas o limitaciones existían antes del surgimiento de la computación en la nube y cómo los solucionó la centralización de servidores en data centers?
     Antes de la computación en la nube las empresas tenian que gastar mucho de dinero en hardware,  y software ademas  de su mantenimiento diario, esto hacia dificil la escalabilidad, con la centralización de servidores en data centers las empresas ahora pueden alquilar recursos y ya no tienen que encargar del hardware, software y su mantenimiento, ni su escalabilidad si es necesario.
 
-   - (b) ¿Por qué se habla de “The Power Wall” y cómo influyó la aparición de procesadores multi-core en la evolución hacia la nube?
+<!--   - (b) ¿Por qué se habla de “The Power Wall” y cómo influyó la aparición de procesadores multi-core en la evolución hacia la nube?
 
 2. **Clusters y load balancing**  
    - (a) Explica cómo la necesidad de atender grandes volúmenes de tráfico en sitios web condujo a la adopción de clústeres y balanceadores de carga. 
 
-   - (b) Describe un ejemplo práctico de cómo un desarrollador de software puede beneficiarse del uso de load balancers para una aplicación web.
+   - (b) Describe un ejemplo práctico de cómo un desarrollador de software puede beneficiarse del uso de load balancers para una aplicación web. -->
+
 
 3. **Elastic computing**  
    - (a) Define con tus propias palabras el concepto de Elastic Computing.
@@ -25,11 +26,22 @@
   
    - (a) Diferencia cada uno de estos modelos. ¿En qué casos un desarrollador optaría por PaaS en lugar de IaaS?  
    - (b) Enumera tres ejemplos concretos de proveedores o herramientas que correspondan a cada tipo de servicio.
-
+      IaaS
+       - Amazon EC2
+       - Azure virtual machines
+       - Google compute engine
+      Paas
+       - AWS Fargate 
+       - Render
+       - Heroku
+      SaaS
+       - GoogleDrive
+       - Word
+       - zoom
 5. **Tipos de nubes (Pública, Privada, Híbrida, Multi-Cloud)**  
-   - (a) ¿Cuáles son las ventajas de implementar una nube privada para una organización grande?  
+   - (a) ¿Cuáles son las ventajas de implementar una nube privada para una organización grande?
+      Una organizacion grande necesita una nube mas personalizada y proteger sus datos, entonces una nube privada en la cual internamente es administrado por personal siguiendo las necesidades de la organizacion es mas adecuado.
    - (b) ¿Por qué una empresa podría verse afectada por el “provider lock-in”?  
-   - (c) ¿Qué rol juegan los “hyperscalers” en el ecosistema de la nube?
-   
+      porque queda totalmente dependiente de un solo proveedor de nube, tener mas proveedores da mas libertad. 
 Presentación PPT:
 [Ver ppt de la exposicion](/presentaciones/DS_Actividad3.pdf)
