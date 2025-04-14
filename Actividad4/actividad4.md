@@ -34,8 +34,30 @@ Orden en el desarrollo colaborativo, de tal manera que cada uno trabaja en su im
 ![](/imagenes/actividad4/ejercicio4_1.PNG)
 ![](/imagenes/actividad4/ejercicio4_2.PNG)
 ### Ejercicio 5: Trabajo colaborativo y manejo de Pull Requests
-
+ - Crear un nuevo repositorio remoto:
+  ![](/imagenes/actividad4/ejercicio5_1.png)
+  ![](/imagenes/actividad4/ejercicio5_2.png)
+ - Crear una nueva rama para desarrollo de una característica:
+  ![](/imagenes/actividad4/ejercicio5_3.png)
+ - Realizar cambios y enviar la rama al repositorio remoto:
+  ![](/imagenes/actividad4/ejercicio5_4.png)
+ - Abrir un Pull Request:
+  ![](/imagenes/actividad4/ejercicio5_5.png)
+ - Revisar y fusionar el Pull Request:
+  ![](/imagenes/actividad4/ejercicio5_6.png)
+  ![](/imagenes/actividad4/ejercicio5_7.png)
+ - Eliminar la rama remota y local:
+  ![](/imagenes/actividad4/ejercicio5_8.png)
 ### Ejercicio 6: Cherry-Picking y Git Stash
-
+ - Hacer cambios en main.py y confirmarlos:
+  ![](/imagenes/actividad4/ejercicio6_1.png)
+ - Crear una nueva rama y aplicar el commit específico:
+  ![](/imagenes/actividad4/ejercicio6_2.png)
+ - Guardar temporalmente cambios no confirmados
+  ![](/imagenes/actividad4/ejercicio6_3.png)
+ - Aplicar los cambios guardados:
+  ![](/imagenes/actividad4/ejercicio6_4.png)
+ - Revisar el historial y confirmar la correcta aplicación de los cambios:
+  ![](/imagenes/actividad4/ejercicio6_5.png)
 Presentación PPT:
 [Ver ppt de la exposicion](/presentaciones/DS_Actividad4.pdf)
