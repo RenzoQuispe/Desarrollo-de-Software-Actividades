@@ -6,12 +6,13 @@
    - (a) ¿Qué problemas o limitaciones existían antes del surgimiento de la computación en la nube y cómo los solucionó la centralización de servidores en data centers?
     Antes de la computación en la nube las empresas tenian que gastar mucho de dinero en hardware,  y software ademas  de su mantenimiento diario, esto hacia dificil la escalabilidad, con la centralización de servidores en data centers las empresas ahora pueden alquilar recursos y ya no tienen que encargar del hardware, software y su mantenimiento, ni su escalabilidad si es necesario.
 
-<!--   - (b) ¿Por qué se habla de “The Power Wall” y cómo influyó la aparición de procesadores multi-core en la evolución hacia la nube?
+<!--   - (b) ¿Por qué se habla de “The Power Wall” y cómo influyó la aparición de procesadores multi-core en la evolución hacia la nube?-->
 
 2. **Clusters y load balancing**  
    - (a) Explica cómo la necesidad de atender grandes volúmenes de tráfico en sitios web condujo a la adopción de clústeres y balanceadores de carga. 
-
-   - (b) Describe un ejemplo práctico de cómo un desarrollador de software puede beneficiarse del uso de load balancers para una aplicación web. -->
+   Un solo servidor no soporta que una pagina web tenga cientos de miles o millones de visitas, para resolver este problema se usa multiples servidores trabajando al mismo tiempo(clusters de servidores). Ademas, para que haya una distribucion correcta del trafico se usa load balancing para llevar parte del trafico a un servidor y las otras partes a otros servidores.
+   - (b) Describe un ejemplo práctico de cómo un desarrollador de software puede beneficiarse del uso de load balancers para una aplicación web. 
+   Unos desarrolladores puede implementar varias funcionalidades y con load balancig puede distribuir funcionalidad entre servidores del cluster, de tal manera se trabaja ordenadamente y no hay dependencia de funcionamiente entre implementaciones tras desplagar la aplicacion.  
 
 
 3. **Elastic computing**  
