@@ -5,3 +5,5 @@
 - [Actividad 3: Computación en la nube](./Actividad3/)
 - [Actividad 4: Introducción a Git - conceptos básicos y operaciones esenciales](./Actividad4/)
 - [Actividad 5: Explorando diferentes formas de fusionar en Git](./Actividad5/)
+- [Actividad 6: Rebase, Cherry-Pick y CI/CD en un entorno ágil](./Actividad6/)
+- [Actividad 7: Pruebas BDD con behave en español](./Actividad7/)
