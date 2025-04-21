@@ -325,10 +325,8 @@ Ese **resultado verde** (todas las pruebas pasando) es el **objetivo final** de 
 ----
 
 #### Ejercicio 1: **Añadir soporte para minutos y segundos en tiempos de espera**
-
 **Objetivo**  
 - Ampliar la funcionalidad para reconocer tiempos de espera expresados en horas, minutos y segundos.
-
 **Instrucciones**  
 1. **Modifica** la función que maneja el tiempo de espera en `steps.py` (o donde parsees el tiempo) para que acepte:
    - "1 hora y 30 minutos"
@@ -342,53 +340,37 @@ Ese **resultado verde** (todas las pruebas pasando) es el **objetivo final** de 
     ![](/imagenes/actividad7/ejercicio1/ejercicio1.3.png)
 4. **En un entorno DevOps**:
    - Agrega la ejecución de `behave` y `pytest` en tu *pipeline* de CI/CD, de modo que al hacer push de los cambios se ejecuten automáticamente las pruebas.
+   ![](/imagenes/actividad7/ejercicio1/ejercicio1.4.png)
+   ![](/imagenes/actividad7/ejercicio1/ejercicio1.5.png)
 
-**Ejemplo Gherkin**:
-```gherkin
-Escenario: Comer pepinos y esperar en minutos y segundos
-  Dado que he comido 35 pepinos
-  Cuando espero "1 hora y 30 minutos y 45 segundos"
-  Entonces mi estómago debería gruñir
-```
+
 
 #### Ejercicio 2: **Manejo de cantidades fraccionarias de pepinos**
-
 **Objetivo**  
 - Permitir que el sistema acepte cantidades fraccionarias de pepinos (decimales).
-
 **Instrucciones**  
 1. **Modifica** el sistema (la clase `Belly` y los steps en Behave) para que acepte entradas como `"0.5"`, `"2.75"`.
+   ![](/imagenes/actividad7/ejercicio2/ejercicio2.1.1.png)
+   ![](/imagenes/actividad7/ejercicio2/ejercicio2.1.2.png)
 2. **Implementa** un nuevo escenario en Gherkin donde se ingiera una cantidad fraccionaria y verifica el comportamiento.
+   ![](/imagenes/actividad7/ejercicio2/ejercicio2.2.png)
 3. **Valida** que el sistema lance una excepción o error si se ingresa una cantidad negativa de pepinos.
+   ![](/imagenes/actividad7/ejercicio2/ejercicio2.3.png)
 4. **Pruebas unitarias**:  
    - Cubre el caso de pepinos fraccionarios en `test_belly.py`.
    - Cubre también el caso de pepinos negativos (se espera un error).
-
-**Ejemplo Gherkin**:
-```gherkin
-Escenario: Comer una cantidad fraccionaria de pepinos
-  Dado que he comido 0.5 pepinos
-  Cuando espero 2 horas
-  Entonces mi estómago no debería gruñir
-```
-
-**En un entorno DevOps**:
-- Asegúrate de que la falla (excepción por valor negativo) sea reportada como *falla de build* si ocurre.  
-- Configura notificaciones (por correo/Slack/Teams) si alguna de las pruebas falla.
-
+   ![](/imagenes/actividad7/ejercicio2/ejercicio2.4.png)
 
 #### Ejercicio 3: **Soporte para idiomas múltiples (Español e Inglés)**
 
 **Objetivo**  
 - Aceptar descripciones de tiempo en distintos idiomas (español e inglés).
-
 **Instrucciones**  
 1. **Modifica** el parsing de tiempo para que reconozca palabras clave en inglés, además de español (por ejemplo, `"two hours"`, `"thirty minutes"`).
 2. **Escribe** al menos dos escenarios de prueba en Gherkin que usen tiempos en inglés.
 3. **Implementa** una función que convierta las palabras en inglés a valores numéricos (similar a la que se usa para el español).
 4. **En un pipeline DevOps**, podrías:
    - Dividir los escenarios en distintos *tags* (`@spanish`, `@english`) y ejecutar cada conjunto en etapas diferentes, o en paralelo.
-
 **Ejemplo Gherkin**:
 ```gherkin
 Escenario: Esperar usando horas en inglés
