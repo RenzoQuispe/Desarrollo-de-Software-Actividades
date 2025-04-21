@@ -191,48 +191,26 @@ del menú. Recuerda que, al ejecutarlo, verás mensajes en tiempo real en la ter
 ![](./imagenes/ejercicio3.5.png)
 
 
-4 . Implementa una opción en el script que realice un merge automatizado de una rama determinada en la rama actual, incluyendo la resolución automática de conflictos (siempre que sea posible).
-
+4 . Implementa una opción en el script que realice un merge automatizado de una rama determinada en la rama actual, incluyeno la resolución automática de conflictos (siempre que sea posible).
 **Instrucciones:**
-
 1. **Investiga** las opciones de `git merge` y cómo utilizar el parámetro `--strategy-option` (por ejemplo, `-X theirs` o `-X ours`) para la resolución automática de conflictos.
 2. **Añade** una nueva opción en el menú principal (por ejemplo, "12) Merge automatizado de una rama").
+![](./imagenes/ejercicio4.2.png)
 3. **Solicita** al usuario el nombre de la rama que se desea fusionar.
+![](./imagenes/ejercicio4.3.png)
 4. **Ejecuta** el comando de merge con una estrategia de resolución automática, por ejemplo:
    ```bash
    git merge -X theirs <rama_a_fusionar>
    ```
 5. **Valida** la operación mostrando el estado final tras el merge.
-
-**Ejemplo de salida esperada:**
-
-```
-Ingrese el nombre de la rama a fusionar: feature/login
-Merge completado automáticamente utilizando la estrategia 'theirs'.
-```
+![](./imagenes/ejercicio4.4.png)
 
 5 . Implementa una opción en el script que genere un reporte con información relevante del repositorio (estado, ramas, últimos commits, stashes, etc.) y lo guarde en un archivo.
-
 **Instrucciones:**
-
 1. **Agrega** una nueva opción al menú principal (por ejemplo, "13 Generar reporte de estado del repositorio").
+![](./imagenes/ejercicio5.1.png)
 2. **Crea** una función que ejecute varios comandos de Git (ej. `git status`, `git branch`, `git log -n 5`, `git stash list`) y redirija la salida a un archivo, por ejemplo `reporte_git.txt`.
+![](./imagenes/ejercicio5.2.png)
 3. **Agrega** mensajes claros en el reporte que indiquen qué información corresponde a cada comando.
 4. **Verifica** que el archivo se cree correctamente y que contenga la información esperada.
-
-**Ejemplo de salida esperada:**
-
-Al ejecutar la función, se debe crear el archivo `reporte_git.txt` con contenido similar a:
-```
-=== Estado del repositorio ===
-[Salida de git status]
-
-=== Ramas existentes ===
-[Salida de git branch]
-
-=== Últimos 5 commits ===
-[Salida de git log -n 5]
-
-=== Lista de stashes ===
-[Salida de git stash list]
-```
+![](./imagenes/ejercicio5.3.png)
