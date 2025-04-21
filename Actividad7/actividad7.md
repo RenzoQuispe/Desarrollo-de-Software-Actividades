@@ -367,24 +367,19 @@ Ese **resultado verde** (todas las pruebas pasando) es el **objetivo final** de 
 - Aceptar descripciones de tiempo en distintos idiomas (español e inglés).
 **Instrucciones**  
 1. **Modifica** el parsing de tiempo para que reconozca palabras clave en inglés, además de español (por ejemplo, `"two hours"`, `"thirty minutes"`).
+![](/imagenes/actividad7/ejercicio3/ejercicio3.1.png)
 2. **Escribe** al menos dos escenarios de prueba en Gherkin que usen tiempos en inglés.
+![](/imagenes/actividad7/ejercicio3/ejercicio3.2.png)
 3. **Implementa** una función que convierta las palabras en inglés a valores numéricos (similar a la que se usa para el español).
+![](/imagenes/actividad7/ejercicio3/ejercicio3.1.png)
 4. **En un pipeline DevOps**, podrías:
    - Dividir los escenarios en distintos *tags* (`@spanish`, `@english`) y ejecutar cada conjunto en etapas diferentes, o en paralelo.
-**Ejemplo Gherkin**:
-```gherkin
-Escenario: Esperar usando horas en inglés
-  Dado que he comido 20 pepinos
-  Cuando espero "two hours and thirty minutes"
-  Entonces mi estómago debería gruñir
-```
-
+![](/imagenes/actividad7/ejercicio3/ejercicio3.4.1.png)
+![](/imagenes/actividad7/ejercicio3/ejercicio3.4.2.png)
 
 #### Ejercicio 4: **Manejo de tiempos aleatorios**
-
 **Objetivo**  
 - Permitir ingresar rangos de tiempo (por ejemplo, "entre 1 y 3 horas") y escoger un tiempo aleatorio dentro de ese rango.
-
 **Instrucciones**  
 1. **Crea** una función que, dada una expresión como "entre 1 y 3 horas", devuelva un valor aleatorio entre 1 y 3 horas.
 2. **Implementa** un escenario en Gherkin que verifique que, tras comer pepinos y esperar un tiempo aleatorio, el estómago puede gruñir.
@@ -392,7 +387,6 @@ Escenario: Esperar usando horas en inglés
 4. **En un pipeline DevOps**:  
    - Considera utilizar un *seed* de aleatoriedad fijo para evitar *flakiness* (tests intermitentes).  
    - O, si manejas aleatoriedad real, acepta el riesgo de pruebas no deterministas y monitorea cuidadosamente.
-
 **Ejemplo Gherkin**:
 ```gherkin
 Escenario: Comer pepinos y esperar un tiempo aleatorio
@@ -403,16 +397,13 @@ Escenario: Comer pepinos y esperar un tiempo aleatorio
 
 
 #### Ejercicio 5: **Validación de cantidades no válidas**
-
 **Objetivo**  
 - Manejar y reportar adecuadamente errores al ingresar cantidades no válidas.
-
 **Instrucciones**  
 1. **Añade** validaciones para evitar que el usuario ingrese < 0 pepinos o > 100 pepinos.
 2. **Modifica** la lógica para arrojar un error (excepción) si la cantidad no es válida.
 3. **Implementa** un escenario de prueba que verifique el comportamiento de error.
 4. **En tu pipeline**, verifica que la excepción se maneje y el test falle de manera controlada si el sistema no lanza la excepción esperada.
-
 **Ejemplo Gherkin**:
 ```gherkin
 Escenario: Manejar una cantidad no válida de pepinos
@@ -422,10 +413,8 @@ Escenario: Manejar una cantidad no válida de pepinos
 
 
 #### Ejercicio 6: **Escalabilidad con grandes cantidades de pepinos**
-
 **Objetivo**  
 - Asegurar que el sistema no falle ni se ponga lento con cantidades y tiempos muy grandes.
-
 **Instrucciones**  
 1. **Añade** soporte para manejar cantidades de pepinos como 1000 (más allá del límite de validación anterior, o ajusta ese límite para pruebas internas).
 2. **Implementa** un escenario en Gherkin para comer 1000 pepinos y esperar 10 horas.
@@ -433,7 +422,6 @@ Escenario: Manejar una cantidad no válida de pepinos
 4. **En un pipeline DevOps**:
    - Ejecuta pruebas de estrés o de larga duración (puedes simular) para garantizar la robustez.
    - Mide el tiempo de ejecución para asegurarte de que no aumente drásticamente.
-
 **Ejemplo Gherkin**:
 ```gherkin
 Escenario: Comer 1000 pepinos y esperar 10 horas
@@ -444,17 +432,14 @@ Escenario: Comer 1000 pepinos y esperar 10 horas
 
 
 #### Ejercicio 7: **Descripciones de tiempo complejas**
-
 **Objetivo**  
 - Ampliar la lógica para manejar descripciones avanzadas tipo `"1 hora, 30 minutos y 45 segundos"`.
-
 **Instrucciones**  
 1. **Refuerza** la expresión regular y parsing para que soporte múltiples separadores (comas, "y", espacios, etc.).
 2. **Implementa** escenarios que cubran al menos 2-3 variaciones complejas en Gherkin.
 3. **Valida** que el total en horas sea exacto (suma de horas, minutos, segundos).
 4. **En un pipeline**:  
    - Puedes analizar la cobertura de pruebas (coverage) para asegurarte de que la nueva lógica de parsing está completamente testeada.
-
 **Ejemplo Gherkin**:
 ```gherkin
 Escenario: Manejar tiempos complejos
@@ -464,17 +449,14 @@ Escenario: Manejar tiempos complejos
 ```
 
 #### Ejercicio 8: **De TDD a BDD – Convertir requisitos técnicos a pruebas en Gherkin**
-
 **Objetivo**  
 - Practicar el paso de una prueba unitaria técnica a un escenario BDD comprensible por el negocio.
-
 **Instrucciones**  
 1. **Escribe** un test unitario básico con Pytest que valide que si se han comido más de 10 pepinos y se espera 2 horas, el estómago gruñe.
 2. **Convierte** ese test unitario en un escenario Gherkin, con la misma lógica, pero más orientado al usuario.
 3. **Implementa** los pasos en Behave (si no existen).
 4. **En un pipeline DevOps**:
    - Ejecuta primero los tests unitarios (rápidos) y luego los tests de Behave (que pueden ser más lentos y de nivel de integración).
-
 **Ejemplo de test unitario** (TDD):
 ```python
 def test_gruñir_si_comido_muchos_pepinos():
@@ -483,7 +465,6 @@ def test_gruñir_si_comido_muchos_pepinos():
     belly.esperar(2)
     assert belly.esta_gruñendo() == True
 ```
-
 **Ejemplo Gherkin** (BDD):
 ```gherkin
 Escenario: Comer muchos pepinos y esperar el tiempo suficiente
@@ -493,10 +474,8 @@ Escenario: Comer muchos pepinos y esperar el tiempo suficiente
 ```
 
 #### Ejercicio 9: **Identificación de criterios de aceptación para historias de usuario**
-
 **Objetivo**  
 - Traducir una historia de usuario en criterios de aceptación claros y escenarios BDD.
-
 **Instrucciones**  
 1. **Toma** la historia de usuario:  
    > "Como usuario que ha comido pepinos, quiero saber si mi estómago va a gruñir después de esperar un tiempo suficiente, para poder tomar una acción."
@@ -505,7 +484,6 @@ Escenario: Comer muchos pepinos y esperar el tiempo suficiente
 4. **Implementa** los pasos en Behave.
 5. **En un pipeline**:
    - Asegúrate de vincular (por ejemplo, en GitLab Issues o GitHub Issues) los escenarios con la historia de usuario para tener *traceability* (rastreabilidad).
-
 **Ejemplo de escenarios Gherkin**:
 ```gherkin
 Escenario: Comer suficientes pepinos y esperar el tiempo adecuado
@@ -520,10 +498,8 @@ Escenario: Comer pocos pepinos y no esperar suficiente tiempo
 ```
 
 #### Ejercicio 10: **Escribir pruebas unitarias antes de escenarios BDD**
-
 **Objetivo**  
 - Demostrar la secuencia TDD (tests unitarios) → BDD (escenarios).
-
 **Instrucciones**  
 1. **Escribe** un test unitario para una nueva función, por ejemplo, `pepinos_comidos()`, que retorna el total de pepinos ingeridos.
 2. **Crea** un escenario Gherkin que describe este comportamiento desde el punto de vista del usuario.
@@ -531,7 +507,6 @@ Escenario: Comer pocos pepinos y no esperar suficiente tiempo
 4. **En un pipeline**:  
    - Ejecución secuencial: 1) Pytest, 2) Behave.  
    - O en etapas separadas para un mejor feedback.
-
 **Ejemplo de test unitario**:
 ```python
 def test_pepinos_restantes():
@@ -539,7 +514,6 @@ def test_pepinos_restantes():
     belly.comer(15)
     assert belly.pepinos_comidos == 15
 ```
-
 **Ejemplo Gherkin**:
 ```gherkin
 Escenario: Saber cuántos pepinos he comido
@@ -549,10 +523,8 @@ Escenario: Saber cuántos pepinos he comido
 
 
 #### Ejercicio 11: **Refactorización guiada por TDD y BDD**
-
 **Objetivo**  
 - Refactorizar código existente sin romper funcionalidades, validado por pruebas unitarias y escenarios BDD.
-
 **Instrucciones**  
 1. **Elige** una funcionalidad ya existente (por ejemplo, `esta_gruñendo()`).
 2. **Escribe** (o asegura que existen) pruebas unitarias que cubran los casos clave.  
@@ -569,7 +541,6 @@ def test_estomago_gruñendo():
     belly.esperar(2)
     assert belly.esta_gruñendo() == True
 ```
-
 **Ejemplo Gherkin**:
 ```gherkin
 Escenario: Verificar que el estómago gruñe tras comer suficientes pepinos y esperar
@@ -580,10 +551,8 @@ Escenario: Verificar que el estómago gruñe tras comer suficientes pepinos y es
 
 
 #### Ejercicio 12: **Ciclo completo de TDD a BDD – Añadir nueva funcionalidad**
-
 **Objetivo**  
 - Desarrollar una nueva funcionalidad *desde cero* con TDD (prueba unitaria) y BDD (escenarios Gherkin).
-
 **Instrucciones**  
 1. **Imagina** una nueva funcionalidad, por ejemplo, "Predecir si el estómago gruñirá con una cantidad dada de pepinos y un tiempo de espera".
 2. **Escribe** primero la prueba unitaria.
@@ -599,7 +568,6 @@ def test_estomago_predecir_gruñido():
     belly.esperar(1.5)
     assert belly.esta_gruñendo() == True
 ```
-
 **Ejemplo Gherkin**:
 ```gherkin
 Escenario: Predecir si mi estómago gruñirá tras comer y esperar
@@ -610,17 +578,14 @@ Escenario: Predecir si mi estómago gruñirá tras comer y esperar
 
 
 #### Ejercicio 13: **Añadir criterios de aceptación claros**
-
 **Objetivo**  
 - Definir con precisión los criterios de aceptación de una nueva funcionalidad y plasmarlos en Gherkin.
-
 **Instrucciones**  
 1. **Define** una nueva historia de usuario (por ejemplo, "Ver cuántos pepinos me faltan para gruñir").
 2. **Identifica** al menos 2-3 criterios de aceptación.
 3. **Convierte** esos criterios en escenarios BDD.
 4. **Implementa** los pasos.  
 5. **En un pipeline**, agrupa los escenarios bajo un mismo *tag* (`@criterio_nuevo`) para ejecutarlos juntos.
-
 **Ejemplo**:
 ```gherkin
 Escenario: Ver cuántos pepinos puedo comer antes de que el estómago gruña
@@ -631,10 +596,8 @@ Escenario: Ver cuántos pepinos puedo comer antes de que el estómago gruña
 
 
 #### Ejercicio 14: **Integración con Mocking, Stubs y Fakes (para DevOps)**
-
 **Objetivo**  
 - Demostrar cómo inyectar dependencias simuladas en tu clase `Belly` y usarlas en pruebas BDD y TDD.
-
 **Instrucciones**  
 1. **Crea** un archivo `clock.py` (por ejemplo) con una función `get_current_time()`.
 2. **Modifica** `Belly` para aceptar un `clock_service` opcional que se inyecta.
@@ -656,10 +619,8 @@ def before_scenario(context, scenario):
 
 
 #### Ejercicio 15: **Despliegue y validación continua en un entorno de integración (CI/CD)**
-
 **Objetivo**  
 - Completar el ciclo DevOps: Cada push al repositorio **desencadena** pruebas automáticas BDD y TDD.
-
 **Instrucciones**  
 1. **Configura** un pipeline (por ejemplo, en GitHub Actions o GitLab CI) con estos pasos:
    - Instalar dependencias (Python, Behave, Pytest).
@@ -679,7 +640,6 @@ def before_scenario(context, scenario):
 - [Desarrollo Dirigido por Comportamiento (BDD) en Wikipedia](https://es.wikipedia.org/wiki/Desarrollo_guiado_por_pruebas#Desarrollo_guiado_por_el_comportamiento)
 
 #### Notas adicionales
-
 - **Idioma**: Asegúrate de que todos los archivos `.feature` comienzan con `# language: es` para indicar que los pasos están en español.
 - **Codificación**: Guarda todos los archivos en formato UTF-8 para evitar problemas con caracteres especiales.
 - **Versión de Behave**: Se recomienda utilizar la última versión de Behave para garantizar el soporte completo del idioma español.
