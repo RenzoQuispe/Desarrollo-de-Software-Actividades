@@ -382,34 +382,28 @@ Ese **resultado verde** (todas las pruebas pasando) es el **objetivo final** de 
 - Permitir ingresar rangos de tiempo (por ejemplo, "entre 1 y 3 horas") y escoger un tiempo aleatorio dentro de ese rango.
 **Instrucciones**  
 1. **Crea** una función que, dada una expresión como "entre 1 y 3 horas", devuelva un valor aleatorio entre 1 y 3 horas.
+![](/imagenes/actividad7/ejercicio4/ejercicio4.1.png)
 2. **Implementa** un escenario en Gherkin que verifique que, tras comer pepinos y esperar un tiempo aleatorio, el estómago puede gruñir.
+![](/imagenes/actividad7/ejercicio4/ejercicio4.2.png)
 3. **Imprime** (en consola o logs) el tiempo aleatorio elegido para que el resultado sea rastreable en tu pipeline.
 4. **En un pipeline DevOps**:  
    - Considera utilizar un *seed* de aleatoriedad fijo para evitar *flakiness* (tests intermitentes).  
    - O, si manejas aleatoriedad real, acepta el riesgo de pruebas no deterministas y monitorea cuidadosamente.
-**Ejemplo Gherkin**:
-```gherkin
-Escenario: Comer pepinos y esperar un tiempo aleatorio
-  Dado que he comido 25 pepinos
-  Cuando espero un tiempo aleatorio entre 1 y 3 horas
-  Entonces mi estómago debería gruñir
-```
-
+![](/imagenes/actividad7/ejercicio4/ejercicio4.3.png)
 
 #### Ejercicio 5: **Validación de cantidades no válidas**
 **Objetivo**  
 - Manejar y reportar adecuadamente errores al ingresar cantidades no válidas.
 **Instrucciones**  
 1. **Añade** validaciones para evitar que el usuario ingrese < 0 pepinos o > 100 pepinos.
+![](/imagenes/actividad7/ejercicio5/ejercicio5.1.png)
 2. **Modifica** la lógica para arrojar un error (excepción) si la cantidad no es válida.
+![](/imagenes/actividad7/ejercicio5/ejercicio5.5.png)
+![](/imagenes/actividad7/ejercicio5/ejercicio5.6.png)
 3. **Implementa** un escenario de prueba que verifique el comportamiento de error.
+![](/imagenes/actividad7/ejercicio5/ejercicio5.3.png)
 4. **En tu pipeline**, verifica que la excepción se maneje y el test falle de manera controlada si el sistema no lanza la excepción esperada.
-**Ejemplo Gherkin**:
-```gherkin
-Escenario: Manejar una cantidad no válida de pepinos
-  Dado que he comido -5 pepinos
-  Entonces debería ocurrir un error de cantidad negativa.
-```
+![](/imagenes/actividad7/ejercicio5/ejercicio5.4.png)
 
 
 #### Ejercicio 6: **Escalabilidad con grandes cantidades de pepinos**
@@ -417,61 +411,41 @@ Escenario: Manejar una cantidad no válida de pepinos
 - Asegurar que el sistema no falle ni se ponga lento con cantidades y tiempos muy grandes.
 **Instrucciones**  
 1. **Añade** soporte para manejar cantidades de pepinos como 1000 (más allá del límite de validación anterior, o ajusta ese límite para pruebas internas).
+![](/imagenes/actividad7/ejercicio6/ejercicio6.1.png)
 2. **Implementa** un escenario en Gherkin para comer 1000 pepinos y esperar 10 horas.
+![](/imagenes/actividad7/ejercicio6/ejercicio6.2.png)
 3. **Verifica** que el sistema sigue comportándose correctamente (sin timeouts ni errores de rendimiento).
 4. **En un pipeline DevOps**:
    - Ejecuta pruebas de estrés o de larga duración (puedes simular) para garantizar la robustez.
    - Mide el tiempo de ejecución para asegurarte de que no aumente drásticamente.
-**Ejemplo Gherkin**:
-```gherkin
-Escenario: Comer 1000 pepinos y esperar 10 horas
-  Dado que he comido 1000 pepinos
-  Cuando espero 10 horas
-  Entonces mi estómago debería gruñir
-```
-
+![](/imagenes/actividad7/ejercicio6/ejercicio6.3.png)
+![](/imagenes/actividad7/ejercicio6/ejercicio6.4.png)
 
 #### Ejercicio 7: **Descripciones de tiempo complejas**
 **Objetivo**  
 - Ampliar la lógica para manejar descripciones avanzadas tipo `"1 hora, 30 minutos y 45 segundos"`.
 **Instrucciones**  
 1. **Refuerza** la expresión regular y parsing para que soporte múltiples separadores (comas, "y", espacios, etc.).
+![](/imagenes/actividad7/ejercicio7/e7.1.png)
 2. **Implementa** escenarios que cubran al menos 2-3 variaciones complejas en Gherkin.
+![](/imagenes/actividad7/ejercicio7/e7.2.png)
 3. **Valida** que el total en horas sea exacto (suma de horas, minutos, segundos).
 4. **En un pipeline**:  
    - Puedes analizar la cobertura de pruebas (coverage) para asegurarte de que la nueva lógica de parsing está completamente testeada.
-**Ejemplo Gherkin**:
-```gherkin
-Escenario: Manejar tiempos complejos
-  Dado que he comido 50 pepinos
-  Cuando espero "1 hora, 30 minutos y 45 segundos"
-  Entonces mi estómago debería gruñir
-```
+  ![](/imagenes/actividad7/ejercicio7/e7.3.png)
 
 #### Ejercicio 8: **De TDD a BDD – Convertir requisitos técnicos a pruebas en Gherkin**
 **Objetivo**  
 - Practicar el paso de una prueba unitaria técnica a un escenario BDD comprensible por el negocio.
 **Instrucciones**  
 1. **Escribe** un test unitario básico con Pytest que valide que si se han comido más de 10 pepinos y se espera 2 horas, el estómago gruñe.
+![](/imagenes/actividad7/ejercicio8/e8.1.png)
 2. **Convierte** ese test unitario en un escenario Gherkin, con la misma lógica, pero más orientado al usuario.
 3. **Implementa** los pasos en Behave (si no existen).
+![](/imagenes/actividad7/ejercicio8/e8.2.png)
 4. **En un pipeline DevOps**:
    - Ejecuta primero los tests unitarios (rápidos) y luego los tests de Behave (que pueden ser más lentos y de nivel de integración).
-**Ejemplo de test unitario** (TDD):
-```python
-def test_gruñir_si_comido_muchos_pepinos():
-    belly = Belly()
-    belly.comer(15)
-    belly.esperar(2)
-    assert belly.esta_gruñendo() == True
-```
-**Ejemplo Gherkin** (BDD):
-```gherkin
-Escenario: Comer muchos pepinos y esperar el tiempo suficiente
-  Dado que he comido 15 pepinos
-  Cuando espero 2 horas
-  Entonces mi estómago debería gruñir
-```
+   ![](/imagenes/actividad7/ejercicio8/e8.3.png)
 
 #### Ejercicio 9: **Identificación de criterios de aceptación para historias de usuario**
 **Objetivo**  
@@ -480,22 +454,15 @@ Escenario: Comer muchos pepinos y esperar el tiempo suficiente
 1. **Toma** la historia de usuario:  
    > "Como usuario que ha comido pepinos, quiero saber si mi estómago va a gruñir después de esperar un tiempo suficiente, para poder tomar una acción."
 2. **Identifica** los criterios de aceptación (por ejemplo, cuántos pepinos y cuánto tiempo se debe esperar).
+El estomago gruño si solo si el numero de pepinos es mayor a 10 y el tiempo de espera es mayor o igual a 1 hora y media.
 3. **Escribe** escenarios Gherkin que reflejen esos criterios.
+   ![](/imagenes/actividad7/ejercicio9/e9.1.png)
 4. **Implementa** los pasos en Behave.
+   ![](/imagenes/actividad7/ejercicio9/e9.2.png)
 5. **En un pipeline**:
    - Asegúrate de vincular (por ejemplo, en GitLab Issues o GitHub Issues) los escenarios con la historia de usuario para tener *traceability* (rastreabilidad).
-**Ejemplo de escenarios Gherkin**:
-```gherkin
-Escenario: Comer suficientes pepinos y esperar el tiempo adecuado
-  Dado que he comido 20 pepinos
-  Cuando espero 2 horas
-  Entonces mi estómago debería gruñir
+   ![](/imagenes/actividad7/ejercicio9/e9.3.png)
 
-Escenario: Comer pocos pepinos y no esperar suficiente tiempo
-  Dado que he comido 5 pepinos
-  Cuando espero 1 hora
-  Entonces mi estómago no debería gruñir
-```
 
 #### Ejercicio 10: **Escribir pruebas unitarias antes de escenarios BDD**
 **Objetivo**  
@@ -507,20 +474,8 @@ Escenario: Comer pocos pepinos y no esperar suficiente tiempo
 4. **En un pipeline**:  
    - Ejecución secuencial: 1) Pytest, 2) Behave.  
    - O en etapas separadas para un mejor feedback.
-**Ejemplo de test unitario**:
-```python
-def test_pepinos_restantes():
-    belly = Belly()
-    belly.comer(15)
-    assert belly.pepinos_comidos == 15
-```
-**Ejemplo Gherkin**:
-```gherkin
-Escenario: Saber cuántos pepinos he comido
-  Dado que he comido 15 pepinos
-  Entonces debería haber comido 15 pepinos
-```
-
+![](/imagenes/actividad7/ejercicio10/e10.1.png)
+![](/imagenes/actividad7/ejercicio10/e10.2.png)
 
 #### Ejercicio 11: **Refactorización guiada por TDD y BDD**
 **Objetivo**  

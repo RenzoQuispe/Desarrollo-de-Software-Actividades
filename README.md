@@ -1,6 +1,6 @@
 # Desarrollo de Software: Actividades
 
-# Actividades
+### Actividades
 - [Actividad 1: Introducción a DevOps](./Actividad1/)
 - [Actividad 2: Del código a la producción: Infraestructura, contenedores, despliegue y observabilidad](./Actividad2/)
 - [Actividad 3: Computación en la nube](./Actividad3/)
@@ -11,7 +11,7 @@
 - [Actividad 8: El patrón Arrange-Act-Assert](./Actividad8/)
 - [Actividad 9: Red-Green-Refactor](./Actividad9/)
 
-# Practicas Dirigidas
+### Practicas Dirigidas
 - [Practica Dirigida 1](./PracticaDirigida1/)
 - [Practica Dirigida 2](./PracticaDirigida2/)
 - [Practica Dirigida 3](./PracticaDirigida3/)
