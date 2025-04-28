@@ -2,6 +2,8 @@
 
 Este proyecto es un ejemplo de cómo utilizar **behave**, una herramienta para pruebas de desarrollo dirigido por comportamiento (Behavior-Driven Development - BDD) en Python, para escribir y ejecutar pruebas en español. Simula el comportamiento de un estómago (`Belly`) que gruñe o no en función de la cantidad de pepinos consumidos y el tiempo de espera.
 
+[Repositorio belly_project](https://github.com/RenzoQuispe/belly_project)
+
 ### Objetivos de aprendizaje
 
 Esta actividad tiene como propósito:
@@ -482,28 +484,15 @@ El estomago gruño si solo si el numero de pepinos es mayor a 10 y el tiempo de 
 - Refactorizar código existente sin romper funcionalidades, validado por pruebas unitarias y escenarios BDD.
 **Instrucciones**  
 1. **Elige** una funcionalidad ya existente (por ejemplo, `esta_gruñendo()`).
-2. **Escribe** (o asegura que existen) pruebas unitarias que cubran los casos clave.  
+2. **Escribe** (o asegura que existen) pruebas unitarias que cubran los casos clave. 
+![](/imagenes/actividad7/ejercicio11/11.1.png) 
 3. **Refactoriza** el código (`Belly` o funciones auxiliares) para mejorar eficiencia, legibilidad o reducir duplicación.
 4. **Valida** que todas las pruebas unitarias y escenarios BDD siguen pasando sin cambios.
+![](/imagenes/actividad7/ejercicio11/11.2.png)
 5. **En un pipeline**:
    - Activa la medición de **coverage** para asegurarte de que la refactorización no rompa funcionalidades no cubiertas.
-
-**Ejemplo de test unitario**:
-```python
-def test_estomago_gruñendo():
-    belly = Belly()
-    belly.comer(20)
-    belly.esperar(2)
-    assert belly.esta_gruñendo() == True
-```
-**Ejemplo Gherkin**:
-```gherkin
-Escenario: Verificar que el estómago gruñe tras comer suficientes pepinos y esperar
-  Dado que he comido 20 pepinos
-  Cuando espero 2 horas
-  Entonces mi estómago debería gruñir
-```
-
+![](/imagenes/actividad7/ejercicio11/11.3.png)
+![](/imagenes/actividad7/ejercicio11/11.4.png)
 
 #### Ejercicio 12: **Ciclo completo de TDD a BDD – Añadir nueva funcionalidad**
 **Objetivo**  
@@ -513,25 +502,10 @@ Escenario: Verificar que el estómago gruñe tras comer suficientes pepinos y es
 2. **Escribe** primero la prueba unitaria.
 3. **Conviértelo** en una historia de usuario y escribe el escenario BDD.
 4. **Implementa** y verifica que tanto la prueba unitaria como el escenario Gherkin pasen.
+![](/imagenes/actividad7/ejercicio12/12.1.png)
 5. **En tu pipeline**, revisa que no haya *regresiones* en otros tests.
-
-**Ejemplo de test unitario**:
-```python
-def test_estomago_predecir_gruñido():
-    belly = Belly()
-    belly.comer(12)
-    belly.esperar(1.5)
-    assert belly.esta_gruñendo() == True
-```
-**Ejemplo Gherkin**:
-```gherkin
-Escenario: Predecir si mi estómago gruñirá tras comer y esperar
-  Dado que he comido 12 pepinos
-  Cuando espero 1.5 horas
-  Entonces mi estómago debería gruñir
-```
-
-
+![](/imagenes/actividad7/ejercicio12/12.2.png)
+![](/imagenes/actividad7/ejercicio12/12.3.png)
 #### Ejercicio 13: **Añadir criterios de aceptación claros**
 **Objetivo**  
 - Definir con precisión los criterios de aceptación de una nueva funcionalidad y plasmarlos en Gherkin.
@@ -541,36 +515,24 @@ Escenario: Predecir si mi estómago gruñirá tras comer y esperar
 3. **Convierte** esos criterios en escenarios BDD.
 4. **Implementa** los pasos.  
 5. **En un pipeline**, agrupa los escenarios bajo un mismo *tag* (`@criterio_nuevo`) para ejecutarlos juntos.
-**Ejemplo**:
-```gherkin
-Escenario: Ver cuántos pepinos puedo comer antes de que el estómago gruña
-  Dado que he comido 8 pepinos
-  Cuando pregunto cuántos pepinos más puedo comer
-  Entonces debería decirme que puedo comer 2 pepinos más
-```
-
-
+![](/imagenes/actividad7/ejercicio13/13.1.png)
+![](/imagenes/actividad7/ejercicio13/13.2.png)
+  
 #### Ejercicio 14: **Integración con Mocking, Stubs y Fakes (para DevOps)**
 **Objetivo**  
 - Demostrar cómo inyectar dependencias simuladas en tu clase `Belly` y usarlas en pruebas BDD y TDD.
 **Instrucciones**  
 1. **Crea** un archivo `clock.py` (por ejemplo) con una función `get_current_time()`.
 2. **Modifica** `Belly` para aceptar un `clock_service` opcional que se inyecta.
+![](/imagenes/actividad7/ejercicio14/14.1.png)
+![](/imagenes/actividad7/ejercicio14/14.2.png)
 3. **Crea** un test unitario con Pytest que use `unittest.mock` para simular el paso del tiempo.
+![](/imagenes/actividad7/ejercicio14/14.3.png)
 4. **En Behave**, usa `environment.py` para inyectar un mock o stub del reloj en el `before_scenario`.
 5. **En un pipeline DevOps**:
    - Asegúrate de no depender de la hora real, así evitas inestabilidad en las pruebas.
+![](/imagenes/actividad7/ejercicio14/14.4.png)
 
-**Ejemplo**:
-```python
-def before_scenario(context, scenario):
-    from unittest.mock import MagicMock
-    from src.belly import Belly
-    
-    fake_clock = MagicMock()
-    fake_clock.return_value = 10000  # tiempo fijo
-    context.belly = Belly(clock_service=fake_clock)
-```
 
 
 #### Ejercicio 15: **Despliegue y validación continua en un entorno de integración (CI/CD)**
@@ -584,8 +546,11 @@ def before_scenario(context, scenario):
    - Generar reportes (HTML, JUnit) y publicarlos como *artifacts*.
 2. **Incluye** verificación de calidad de código (por ejemplo, flake8 o black).
 3. **Al aprobarse** el pipeline, **despliega** (si corresponde) tu aplicación o *script* a un entorno de staging/producción.
-
-
+![](/imagenes/actividad7/ejercicio15/15.1.png)
+![](/imagenes/actividad7/ejercicio15/15.2.png)
+![](/imagenes/actividad7/ejercicio15/15.3.png)
+![](/imagenes/actividad7/ejercicio15/15.4.png)
+![](/imagenes/actividad7/ejercicio15/15.5.png)
 ---
 
 #### Referencias

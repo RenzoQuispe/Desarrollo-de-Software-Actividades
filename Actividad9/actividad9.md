@@ -1,4 +1,4 @@
-### Actividad: Red-Green-Refactor
+### Actividad 9: Red-Green-Refactor
 
 **Objetivo de aprendizaje:**  El objetivo de este proyecto es desarrollar una clase ShoppingCart que permita gestionar de forma eficiente un carrito de compras. La clase debe soportar las siguientes funcionalidades:
 
