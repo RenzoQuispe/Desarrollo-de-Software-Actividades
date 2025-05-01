@@ -1,4 +1,5 @@
-### Actividad: **Repo-Guardian**  
+[Repositorio Repo-Guardian](https://github.com/RenzoQuispe/Repo-Guardian)
+### Practica Calificada 1: **Repo-Guardian**  
 
 > Esta actividad acompaña a la evaluación dada el 28 de abril según las rúbricas mencionadas en el curso.
 
@@ -82,9 +83,11 @@ Orientación DevOps / BDD: el proyecto debe nacer, evolucionar y entregarse con 
          - run: behave -f progress
    ``` 
   ![](./imagenes/5.5.png)   
-6. **Roadmap.md**: tabla <épica, historia, tarea, prioridad, etiqueta Kanban>.  
+6. **Roadmap.md**: tabla <épica, historia, tarea, prioridad, etiqueta Kanban>. 
+  ![](./imagenes/5.6.png)  
 7. Crear **épica E-01 Setup** con issues: *RX-01 Crear repo*, *RX-02 Configurar CI*, *RX-03 Plantillas*, *RX-04 Roadmap*.
    ![](./imagenes/5.7.png) 
+   ![](./imagenes/5.8.png) 
 
 #### 6. Calendario global de hitos (avance verificado cada 48 h)  
 
@@ -101,11 +104,15 @@ Orientación DevOps / BDD: el proyecto debe nacer, evolucionar y entregarse con 
 
 #### Día -1 → D-0 (*Bootstrap y entorno*)  
 
-* Crear `virtualenv`, instalar dependencias, añadir `requirements.txt`.  
-* Escribir `README.md` con descripción corta, tabla de comandos, badges "en construcción".  
-* Dibujar **diagrama de contexto** (PlantUML) que muestre usuario ↔ Repo-Guardian ↔ Repositorio Git ↔ GitHub API.  
+* Crear `virtualenv`, instalar dependencias, añadir `requirements.txt`.
+![](./imagenes/D0_1.png)   
+* Escribir `README.md` con descripción corta, tabla de comandos, badges "en construcción".
+![](./imagenes/D0_2.png)   
+* Dibujar **diagrama de contexto** (PlantUML) que muestre usuario ↔ Repo-Guardian ↔ Repositorio Git ↔ GitHub API.
+![](./imagenes/D0_3.png)     
 * Colocar CI minimal (tests vacíos que siempre pasan) para verificar tubería.
-
+![](./imagenes/D0_4.png)
+![](./imagenes/D0_5.png)
 #### D-1 (*Object Scanner I*)  
 
 * Implementar lectura binaria de objetos sueltos:  

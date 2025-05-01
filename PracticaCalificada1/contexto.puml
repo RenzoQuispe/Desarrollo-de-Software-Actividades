@@ -1,0 +1,13 @@
+@startuml
+actor Usuario
+
+Usuario --> "Repo-Guardian CLI/TUI" : Usa
+
+"Repo-Guardian CLI/TUI" --> "Repositorio .git local" : Audita / Repara
+"Repo-Guardian CLI/TUI" --> "GitHub API" : (Opcional)
+
+"Repo-Guardian CLI/TUI" --> "Analisis de integridad (Merkle, SHA)"
+"Repo-Guardian CLI/TUI" --> "Reparacion y reconstruccion"
+"Repo-Guardian CLI/TUI" --> "Exportador de grafo (.graphml)"
+
+@enduml
