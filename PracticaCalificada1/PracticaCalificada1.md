@@ -142,8 +142,25 @@ Orientación DevOps / BDD: el proyecto debe nacer, evolucionar y entregarse con 
 
 #### D-3 (*Diseño DAG*)  
 
-* Redactar `docs/dag.mmd` con Mermaid inspirado en Git’s commit DAG.  
+* Redactar `docs/dag.mmd` con Mermaid inspirado en Git’s commit DAG.
+```mermaid
+%% Representación interna de Git (commit → parent)
+  %% main: A -> B -> C -> E -> F
+  %% B -> D
+  %% D y C -> E (merge)
+  %% E -> F
+flowchart TD
+  A[Commit A<br/>abc1234] --> B[Commit B<br/>bcd5678]
+  B --> C[Commit C<br/>cde8910]
+  B --> D[Commit D<br/>def2345]  
+  C --> E[Commit E<br/>efg3456]
+  D --> E                       
+  E --> F[Commit F<br/>fgh4567]                
+```  
+![](./imagenes/D3_1.png) 
 * Implementar esqueleto `dag_builder.py` con firma pública y tests-placeholder.  
+![](./imagenes/D3_2.png) 
+![](./imagenes/D3_3.png) 
 
 #### D-4 (*DAG completo + Jaro–Winkler + hook*)  
 
