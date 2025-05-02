@@ -115,17 +115,18 @@ Orientación DevOps / BDD: el proyecto debe nacer, evolucionar y entregarse con 
 ![](./imagenes/D0_5.png)
 
 #### D-1 (*Object Scanner I*)  
-
 * Implementar lectura binaria de objetos sueltos:  
 ![](./imagenes/D1_1.png) 
 * 6 pruebas unitarias: rutas válidas, CRC erróneo, type desconocido, etc. 
 ![](./imagenes/D1_2.png) 
 * Añadir fixture `fixtures/corrupt-blob.git` (pequeño repo).  
 ![](./imagenes/D1_3.png)
+![](./imagenes/D1_4.png)
 
 #### D-2 (*Object Scanner II + BDD #1*)  
 
-* Añadir soporte a packfiles: parsear header, iterar entradas, usar idx.  
+* Añadir soporte a packfiles: parsear header, iterar entradas, usar idx. 
+![](./imagenes/D2_1.png) 
 * `behave` feature:  
   ```gherkin
   Scenario: Blob dañado en packfile
@@ -134,7 +135,10 @@ Orientación DevOps / BDD: el proyecto debe nacer, evolucionar y entregarse con 
     Then el exit code es 2
      And la salida contiene "Invalid CRC at offset"
   ```  
+![](./imagenes/D2_2.png) 
 * CI exige coverage ≥ 0,60; accionará badge `codecov` o `coveralls`.
+![](./imagenes/D2_3.png) 
+![](./imagenes/D2_4.png) 
 
 #### D-3 (*Diseño DAG*)  
 
