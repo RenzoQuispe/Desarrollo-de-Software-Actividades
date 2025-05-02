@@ -103,7 +103,7 @@ Orientación DevOps / BDD: el proyecto debe nacer, evolucionar y entregarse con 
 #### 7. Detalle de tareas técnicas día por día  
 
 #### Día -1 → D-0 (*Bootstrap y entorno*)  
-
+![](./imagenes/commitD0.png) 
 * Crear `virtualenv`, instalar dependencias, añadir `requirements.txt`.
 ![](./imagenes/D0_1.png)   
 * Escribir `README.md` con descripción corta, tabla de comandos, badges "en construcción".
@@ -113,14 +113,15 @@ Orientación DevOps / BDD: el proyecto debe nacer, evolucionar y entregarse con 
 * Colocar CI minimal (tests vacíos que siempre pasan) para verificar tubería.
 ![](./imagenes/D0_4.png)
 ![](./imagenes/D0_5.png)
+
 #### D-1 (*Object Scanner I*)  
 
 * Implementar lectura binaria de objetos sueltos:  
-  ```python
-  def read_loose(path: Path) -> GitObject: ...
-  ```  
-* 6 pruebas unitarias: rutas válidas, CRC erróneo, type desconocido, etc.  
+![](./imagenes/D1_1.png) 
+* 6 pruebas unitarias: rutas válidas, CRC erróneo, type desconocido, etc. 
+![](./imagenes/D1_2.png) 
 * Añadir fixture `fixtures/corrupt-blob.git` (pequeño repo).  
+![](./imagenes/D1_3.png)
 
 #### D-2 (*Object Scanner II + BDD #1*)  
 
