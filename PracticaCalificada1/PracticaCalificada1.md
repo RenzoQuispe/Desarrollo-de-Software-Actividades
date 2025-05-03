@@ -163,12 +163,20 @@ flowchart TD
 ![](./imagenes/D3_3.png) 
 
 #### D-4 (*DAG completo + Jaro–Winkler + hook*)  
-
-* Función `build_graph(objects: Iterable[Commit]) -> DiGraph` que retorna `networkx.DiGraph`.  
-* `jw_detector.is_rewrite(a, b) -> bool` donde `a,b` son listas de hashes.  
+![](./imagenes/D4.png) 
+* Función `build_graph(objects: Iterable[Commit]) -> DiGraph` que retorna `networkx.DiGraph`. 
+![](./imagenes/D4_1.png) 
+* `jw_detector.is_rewrite(a, b) -> bool` donde `a,b` son listas de hashes. 
+![](./imagenes/D4_2.png) 
 * Crear hook Bash `post-merge` que llama a `guardian cli export-graph` y usa CLI `gh` para anexar artefacto al Release actual.  
+![](./imagenes/D4_3.2.png)
+![](./imagenes/D4_3.1.png)
+![](./imagenes/D4_3.4.png)
+![](./imagenes/D4_3.3.png)
 * Release draft `v0.5.0-alpha` generado por `draft-release.yml`.
-
+![](./imagenes/D4_3.3.png)
+![](./imagenes/D4_4.png) 
+![](./imagenes/D4_5.png)
 #### D-5 (*Diseño y wireframe TUI*)  
 
 * Grabación asciinema o GIF con wireframe: barra de progreso, panel errores, panel comandos (`R` Repair, `E` Export).  
