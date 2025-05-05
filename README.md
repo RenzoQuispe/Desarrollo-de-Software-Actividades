@@ -10,7 +10,9 @@
 - [Actividad 7: Pruebas BDD con behave en español](./Actividad7/)
 - [Actividad 8: El patrón Arrange-Act-Assert](./Actividad8/)
 - [Actividad 9: Red-Green-Refactor](./Actividad9/)
-
+- [Actividad 10: Ejecutar pruebas con pytest](./Actividad10/)
+- [Actividad 11: Escribir aserciones en pruebas con pytest](./Actividad11/)
+- [Actividad 12: Revisión de fixtures en pruebas](./Actividad12/)
 ### Practicas Dirigidas
 - [Practica Dirigida 1](./PracticaDirigida1/)
 - [Practica Dirigida 2](./PracticaDirigida2/)
