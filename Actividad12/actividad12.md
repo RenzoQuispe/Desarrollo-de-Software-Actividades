@@ -32,7 +32,9 @@ class TestExample:
 ```
 
 En esta actividad, verás las diferentes formas en que los fixtures pueden ser utilizados para preparar y limpiar el estado antes y después de las pruebas, utilizando métodos de clase y de instancia dentro de una clase de pruebas.
-
+- Preparamos entorno virtual y dependencias
+![](imagenes/p0.png)
+![](imagenes/p0_.png)
 ### **Paso 1: Inicializar la base de datos**
 
 En este paso, configurarás un fixture de prueba para conectar y desconectar de la base de datos. Esto solo debe hacerse una vez antes de todas las pruebas y una vez después de todas las pruebas.
@@ -63,16 +65,14 @@ def setup_database():
     # Se ejecuta después de todas las pruebas
     db.session.close()
 ```
-
+![](imagenes/p1_.png)
 Este fixture se ejecutará automáticamente antes de todas las pruebas del módulo y cerrará la sesión de la base de datos al finalizar todas las pruebas.
 
 #### Ejecutar las pruebas
 
 Para asegurarte de que las pruebas se ejecutan correctamente, utiliza el siguiente comando para ejecutar `pytest`:
 
-```bash
-pytest
-```
+![](imagenes/p1.png)
 
 ### **Paso 2: Cargar datos de prueba**
 
@@ -112,16 +112,14 @@ class TestAccountModel:
         """Desconectar de la base de datos"""
         pass  # Agrega cualquier acción de limpieza si es necesario
 ```
-
+![](imagenes/p2_.png)
 Este método se ejecuta una vez antes de todas las pruebas de la clase, cargando los datos de prueba necesarios.
 
 #### Ejecutar las pruebas
 
 Ejecuta `pytest` para asegurarte de que tu caso de prueba se ejecuta sin errores:
 
-```bash
-pytest
-```
+![](imagenes/p2.png)
 
 ### **Paso 3: Escribir un caso de prueba para crear una cuenta**
 
@@ -145,16 +143,11 @@ def test_create_an_account(self):
     account.create()
     assert len(Account.all()) == 1
 ```
-
+![](imagenes/crearcuenta.png)
 Este método crea una cuenta utilizando los datos de prueba y verifica que hay exactamente una cuenta en la base de datos.
 
-#### Ejecutar las pruebas
-
-Ejecuta `pytest` para asegurarte de que la prueba pasa:
-
-```bash
-pytest
-```
+- Ejecutamos pytest para verficar las pruebas
+![](imagenes/p3.png)
 
 ### **Paso 4: Escribir un caso de prueba para crear todas las cuentas**
 
@@ -176,16 +169,11 @@ def test_create_all_accounts(self):
         account.create()
     assert len(Account.all()) == len(ACCOUNT_DATA)
 ```
-
+![](imagenes/crearcuenta.png)
 Este método crea todas las cuentas de los datos de prueba y verifica que el número de cuentas en la base de datos coincide con el número de cuentas en `ACCOUNT_DATA`.
 
-#### Ejecutar las pruebas
-
-Ejecuta `pytest` para verificar si tu prueba pasa:
-
-```bash
-pytest
-```
+- Ejecutamos pytest para verficar las pruebas
+![](imagenes/p3.png)
 
 ### **Paso 5: Limpiar las tablas antes y después de cada prueba**
 
@@ -224,16 +212,11 @@ def teardown_method(self):
     """Eliminar la sesión después de cada prueba"""
     db.session.remove()
 ```
-
+![](imagenes/p5_.png)
 Estos métodos aseguran que la base de datos esté limpia antes y después de cada prueba, evitando que los datos residuales afecten a las pruebas subsecuentes.
 
-#### Ejecutar las pruebas
-
-Ejecuta `pytest` para asegurarte de que tus pruebas pasan:
-
-```bash
-pytest
-```
+- Ejecutamos pytest para verficar las pruebas
+![](imagenes/p5.png)
 
 
 De esta forma, has aprendido a utilizar los diferentes tipos de fixtures disponibles en `pytest` para preparar y limpiar el estado antes y después de las pruebas, tanto a nivel de módulo como a nivel de clase y de método.
