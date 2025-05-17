@@ -24,7 +24,85 @@ def client():
     """
     return app.test_client()
 
+# PRUEBAS
 
+# 2.1. Actualizar un contador (PUT)
+def test_update_counter(client): 
+    """Debe actualizar (incrementar) el contador con PUT y retornar 200 OK."""
+    # 1. Crear un contador
+    response = client.post("/counters/update_me")
+    assert response.status_code == HTTPStatus.CREATED
+    data = response.get_json()
+    assert data["update_me"] == 0
+
+    # 2. Actualizar el contador
+    response = client.put("/counters/update_me")
+    assert response.status_code == HTTPStatus.OK
+    data = response.get_json()
+    # Asumimos que incrementa de 0 a 1
+    assert data["update_me"] == 1
+    
+# 2.2. Leer un contador (GET)
+def test_read_counter(client):
+    """Debe leer un contador con GET y retornar 200 OK."""
+    # 1. Crear un contador
+    response = client.post("/counters/read_me")
+    assert response.status_code == HTTPStatus.CREATED
+
+    # 2. Leer el contador
+    response = client.get("/counters/read_me")
+    assert response.status_code == HTTPStatus.OK
+    data = response.get_json()
+    # Debería estar en 0 justo después de crearlo
+    assert data["read_me"] == 0
+
+# 2.3. Eliminar un contador (DELETE)
+def test_delete_counter(client):
+    """Debe eliminar un contador con DELETE y retornar 204 NO CONTENT."""
+    # 1. Crear un contador
+    response = client.post("/counters/delete_me")
+    assert response.status_code == HTTPStatus.CREATED
+
+    # 2. Eliminar el contador
+    response = client.delete("/counters/delete_me")
+    assert response.status_code == HTTPStatus.NO_CONTENT
+
+    # 3. Verificar que ya no existe
+    response = client.get("/counters/delete_me")
+    assert response.status_code == HTTPStatus.NOT_FOUND
+
+# 3.1. Incrementar un contador (ruta dedicada)
+def test_increment_counter(client):
+    client.post("/counters/my_counter")
+    response = client.put("/counters/my_counter/increment")
+    assert response.status_code == HTTPStatus.OK
+    assert response.get_json()["my_counter"] == 1
+    
+# 3.2. Establecer valor específico    
+def test_set_counter(client):
+    client.post("/counters/custom")
+    response = client.put("/counters/custom/set", json={"value": 10})
+    assert response.status_code == HTTPStatus.OK
+    assert response.get_json()["custom"] == 10
+
+# 3.3. Listar todos los contadores  
+def test_list_counters(client):
+    client.post("/counters/a")
+    client.post("/counters/b")
+    response = client.get("/counters")
+    assert response.status_code == HTTPStatus.OK
+    data = response.get_json()
+    assert set(data.keys()) == {"a", "b"}    
+    
+# 3.4. Reiniciar un contador
+def test_reset_counter(client):
+    client.post("/counters/tmp")
+    client.put("/counters/tmp")
+    response = client.put("/counters/tmp/reset")
+    assert response.status_code == HTTPStatus.OK
+    assert response.get_json()["tmp"] == 0    
+    
+# Ultimos tests    
 def test_create_a_counter(client):
     """Debe crear un contador y retornar 201 CREATED."""
     response = client.post("/counters/test_counter")
@@ -43,50 +121,4 @@ def test_duplicate_counter(client):
 
     # Intentar crear el mismo contador nuevamente
     response = client.post("/counters/test_counter")
-    assert response.status_code == HTTPStatus.CONFLICT
-
-
-def test_update_counter(client):
-    """Debe actualizar (incrementar) el contador con PUT y retornar 200 OK."""
-    # 1. Crear un contador
-    response = client.post("/counters/update_me")
-    assert response.status_code == HTTPStatus.CREATED
-    data = response.get_json()
-    assert data["update_me"] == 0
-
-    # 2. Actualizar el contador
-    response = client.put("/counters/update_me")
-    assert response.status_code == HTTPStatus.OK
-    data = response.get_json()
-    # Asumimos que incrementa de 0 a 1
-    assert data["update_me"] == 1
-
-
-def test_read_counter(client):
-    """Debe leer un contador con GET y retornar 200 OK."""
-    # 1. Crear un contador
-    response = client.post("/counters/read_me")
-    assert response.status_code == HTTPStatus.CREATED
-
-    # 2. Leer el contador
-    response = client.get("/counters/read_me")
-    assert response.status_code == HTTPStatus.OK
-    data = response.get_json()
-    # Debería estar en 0 justo después de crearlo
-    assert data["read_me"] == 0
-
-
-def test_delete_counter(client):
-    """Debe eliminar un contador con DELETE y retornar 204 NO CONTENT."""
-    # 1. Crear un contador
-    response = client.post("/counters/delete_me")
-    assert response.status_code == HTTPStatus.CREATED
-
-    # 2. Eliminar el contador
-    response = client.delete("/counters/delete_me")
-    assert response.status_code == HTTPStatus.NO_CONTENT
-
-    # 3. Verificar que ya no existe
-    response = client.get("/counters/delete_me")
-    assert response.status_code == HTTPStatus.NOT_FOUND
-
+    assert response.status_code == HTTPStatus.CONFLICT    

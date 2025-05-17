@@ -1,4 +1,4 @@
-### Actividad: Práctica del ciclo TDD
+### Actividad 16: Práctica del ciclo TDD
 
 #### 1. Estructura de los archivos de ejemplo
 
@@ -11,6 +11,8 @@ El repositorio de referencia contiene:
 - **`tests_counters.py`**  
   Pruebas Pytest que validan las rutas CRUD: creación, lectura, actualización y eliminación.
 
+![](imagenes/1.1.png)
+
 Rutas disponibles en `counter.py`:
 
 - **`POST   /counters/<name>`**  Crear un nuevo contador con valor inicial 0.  
@@ -18,6 +20,7 @@ Rutas disponibles en `counter.py`:
 - **`PUT    /counters/<name>`**  Actualizar (incrementar) el valor de un contador.  
 - **`DELETE /counters/<name>`**  Eliminar un contador existente.  
 
+![](imagenes/1.2.png)
 
 #### 2. Desarrollo paso a paso (TDD)
 
@@ -78,6 +81,9 @@ def update_counter(name):
     return {name: COUNTERS[name]}, status.HTTP_200_OK
 ```
 
+- Ejecucion de test
+![](imagenes/2.1.png)
+
 ##### 2.2. Leer un contador (GET)
 
 **Paso 1: Prueba (Red)**  
@@ -109,6 +115,9 @@ def read_counter(name):
 def read_counter(name):
     return {name: COUNTERS[name]}, status.HTTP_200_OK
 ```
+
+- Ejecucion de los tests
+![](imagenes/2.2.png)
 
 ##### 2.3. Eliminar un contador (DELETE)
 
@@ -147,6 +156,14 @@ def delete_counter(name):
     return "", status.HTTP_204_NO_CONTENT
 ```
 
+- Ejecucion de los tests
+![](imagenes/2.3.png)
+
+- Coverage actual
+![](imagenes/cov1.png)
+
+
+
 #### 3. Ejercicios adicionales
 
 ##### 3.1. Incrementar un contador (ruta dedicada)
@@ -173,6 +190,9 @@ def delete_counter(name):
 3. **Refactor:**  
    - `change_counter` ya centraliza la lógica de ajuste de valor.
 
+- Ejecucion de los tests
+![](imagenes/3.1.png)
+
 ##### 3.2. Establecer valor específico
 
 1. **Prueba (Red):**  
@@ -194,6 +214,9 @@ def delete_counter(name):
    ```
 3. **Refactor:**  
    - Validar que `body["value"]` sea entero y ≥0; elevar 400 BAD REQUEST si no.
+
+- Ejecucion de los tests
+![](imagenes/3.2.png)
 
 ##### 3.3. Listar todos los contadores
 
@@ -217,6 +240,9 @@ def delete_counter(name):
    - Ninguno necesario si es sencillo; considerar paginación o filtros.
 
 
+- Ejecucion de los tests
+![](imagenes/3.3.png)
+
 ##### 3.4. Reiniciar un contador
 
 1. **Prueba (Red):**  
@@ -239,5 +265,13 @@ def delete_counter(name):
 3. **Refactor:**  
    - Reutilizar `change_counter` con delta = –current value, si se desea.
 
+- Ejecucion de los tests
+![](imagenes/3.4.png)
 
-> **Nota:** No es necesario modificar los archivos de prueba (`tests_counters.py`). Todas las refactorizaciones deben dejar intactas las pruebas existentes.
+- Coverage actual
+![](imagenes/cov2.png)
+
+- Ultimos test: test_create_a_counter y test_duplicate_counter
+
+- Coverage final
+![](imagenes/cov3.png)
