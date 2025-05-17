@@ -1,0 +1,4 @@
+pytest
+behave
+requests
+coverage

@@ -1,0 +1,1 @@
+Esta Carpeta(belly_project) es una copia de muestra del repositorio: https://github.com/RenzoQuispe/belly_project
