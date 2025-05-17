@@ -1,0 +1,8 @@
+pytest
+pytest-cov
+behave
+requests
+coverage
+flask
+flask_sqlalchemy
+factory_boy
