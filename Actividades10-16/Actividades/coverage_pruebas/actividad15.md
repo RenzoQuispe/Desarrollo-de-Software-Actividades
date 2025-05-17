@@ -69,15 +69,18 @@ Conocer el estado actual de la cobertura y detectar áreas del código que podr�
    make coverage_individual
    ```  
    Esto generará reportes HTML por cada actividad (en este caso, la actividad relacionada con el modelo `Account`).
-
+   ![](imagenes/e1.1.png)
 2. **Abrir los reportes HTML:**  
    Revisa, por ejemplo, el reporte en `htmlcov_pruebas` abriéndolo en tu navegador.  
    - Analiza qué funciones o líneas tienen menor cobertura.
    - Presta atención a los métodos con condicionales (como el método `update`) y verifica que se hayan probado tanto los casos en los que se asigna un ID como los que no lo tienen.
-
+   ![](imagenes/e1.2.png)
 3. **Documentar las observaciones:**  
    Registra en un breve informe qué partes del código no están totalmente cubiertas y plantea posibles razones o casos de prueba faltantes.
-
+   - En la Actividad 12 (pruebas_fixtures) el modulo models/account.py tiene solo 68% de cobertura.
+     Hay 13 lineas sin cobertura
+     Lineas de codigo sin cobertura: 26, 30, 34-35, 45-48, 52-54, 74-75
+   ![](imagenes/e1.3.png)
 
 #### Ejercicio 2: Ampliar las pruebas para mejorar la cobertura
 
@@ -95,6 +98,8 @@ Aumentar la cobertura de pruebas escribiendo tests que exploren casos adicionale
      - Probar el caso en el que el diccionario está incompleto y cómo se comporta el método.
      - Evaluar qué sucede cuando se pasan claves inesperadas (por ejemplo, claves que no pertenecen al modelo).
 
+   ![](imagenes/e2.1.png)
+
 2. **Pruebas de comportamiento de métodos CRUD:**
    - **`create`:**  
      - Verificar que se genere un ID tras la creación.
@@ -103,14 +108,23 @@ Aumentar la cobertura de pruebas escribiendo tests que exploren casos adicionale
    - **`delete`:**  
      - Confirmar que tras la eliminación, la cuenta ya no esté disponible mediante el método `find` o `all`.
 
+   ![](imagenes/e2.2.png)
+
 3. **Pruebas para métodos de clase:**
    - **`all`:**  
      - Probar el comportamiento cuando no hay cuentas en la base de datos.
    - **`find`:**  
      - Además del caso en el que la cuenta existe y no existe, probar casos límite (por ejemplo, pasando un ID no entero o un valor inesperado, si es que la implementación lo permite).
 
+   ![](imagenes/e2.3.png)
+
 4. **Prueba del método especial `__repr__`:**
    - Verificar que el formato del string sea exactamente el esperado.
+
+   ![](imagenes/e2.4.png)
+
+- Cobertura tras incluir nuevos test
+   ![](imagenes/e2.cov.png)
 
 #### Ejercicio 3: Ampliación y optimización del Makefile
 
@@ -128,11 +142,11 @@ Automatizar no solo la ejecución de pruebas y generación de reportes, sino tam
      	@echo "Ejecutando flake8..."
      	flake8 .
      ```
-
+   ![](imagenes/e3.1.png)
 2. **`make test_all`:**  
    - Ejecuta las pruebas en todas las actividades/módulos del proyecto.
    - Este target ya está implementado, pero podrías ampliarlo para que también genere reportes de cobertura consolidados.
-
+   ![](imagenes/e3.2.png)
 3. **Target para reporte consolidado de cobertura:**  
    - Puedes crear un nuevo target que combine los reportes individuales en uno solo. Por ejemplo:
      ```make
@@ -149,10 +163,10 @@ Automatizar no solo la ejecución de pruebas y generación de reportes, sino tam
      	coverage html -d htmlcov_consolidado
      ```
    - Este target recorre cada actividad, ejecuta las pruebas y luego utiliza `coverage combine` para unir los datos.
-
+   ![](imagenes/e3.3.png)
 4. **`make clean`:**  
    - Asegúrate de que el target `clean` elimina todos los archivos temporales, caches y reportes generados, para mantener el proyecto limpio.
-
+   ![](imagenes/e3.4.png)
 
 #### Ejercicio 4: Integración y pruebas con una base de datos temporal
 

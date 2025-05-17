@@ -108,3 +108,18 @@ clean:
 	coverage erase
 	@echo "Limpieza completa."
 
+
+# =========================================================================
+# Reportes individuales en uno solo
+# =========================================================================
+.PHONY: coverage_all
+coverage_all:
+	@echo "Generando reporte consolidado de cobertura..."
+	coverage erase
+	@for activity in $(ACTIVITIES); do \
+		echo "Ejecutando pruebas en $$activity para cobertura consolidada"; \
+		cd Actividades/$$activity && PYTHONWARNINGS="ignore::DeprecationWarning" coverage run --source=. -m pytest . && cd - >/dev/null; \
+	done
+	coverage combine
+	coverage report -m
+	coverage html -d htmlcov_consolidado
