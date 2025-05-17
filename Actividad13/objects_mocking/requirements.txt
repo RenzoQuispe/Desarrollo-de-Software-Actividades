@@ -1,4 +1,0 @@
-pytest
-behave
-requests
-coverage
