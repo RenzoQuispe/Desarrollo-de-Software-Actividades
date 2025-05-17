@@ -16,6 +16,7 @@
 - [Actividad 13: Objetos Mocking](./Actividades10-16/Actividades/objects_mocking/actividad13.md)
 - [Actividad 14: Factory y fakes](./Actividades10-16/Actividades/factories_fakes/actividad14.md)
 - [Actividad 15: Cobertura de pruebas](./Actividades10-16/Actividades/coverage_pruebas/actividad15.md)
+- [Actividad 16: Práctica del ciclo TDD](./Actividades10-16/Actividades/practica_tdd/actividad16.md)
 ### Practicas Dirigidas
 - [Practica Dirigida 1: Exploración avanzada de Git y estructuras de datos (árbol de Merkle)](./PracticaDirigida1/PracticaDirigida1.md)
 - [Practica Dirigida 2: Exploración y administración avanzada de Git mediante un script interactivo](./PracticaDirigida2/PracticaDirigida2.md)
