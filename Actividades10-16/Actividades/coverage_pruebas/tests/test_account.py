@@ -3,6 +3,8 @@ import pytest
 import sys
 import os
 
+os.environ['TESTING'] = '1'
+
 # Ajustamos el path para que 'models' sea importable
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
@@ -160,4 +162,21 @@ class TestAccountModel:
         representation = repr(account)
         expected = f"<Account '{data['name']}'>"
         assert representation == expected
+    
+    # tests para validate(self)
+    def test_validacion_falla_nombre_vacio(self):
+        cuenta = Account(name="", email="usuario@gmail.com")
+        with pytest.raises(DataValidationError) as excinfo:
+            cuenta.validate()
+        assert "nombre no puede estar vacío" in str(excinfo.value)
 
+    def test_validacion_falla_email_invalido(self):
+        cuenta = Account(name="Usuario", email="email-invalido")
+        with pytest.raises(DataValidationError) as excinfo:
+            cuenta.validate()
+        assert "email no es válido" in str(excinfo.value)
+
+    def test_validacion_exitosa_con_datos_correctos(self):
+        cuenta = Account(name="Valido", email="valido@gmail.com")
+        # No debe lanzar ninguna excepción
+        cuenta.validate()

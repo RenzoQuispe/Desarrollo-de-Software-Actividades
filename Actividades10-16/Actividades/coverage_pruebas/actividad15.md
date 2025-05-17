@@ -1,4 +1,4 @@
-### Actividad: Cobertura de pruebas
+### Actividad 15: Cobertura de pruebas
 
 
 #### 1. Introducción a la cobertura de código
@@ -190,16 +190,17 @@ Implementar pruebas de integración utilizando una base de datos temporal para e
      app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
      db = SQLAlchemy(app)
      ```
+   ![](imagenes/e4.1.png)     
 2. **Modificar el Fixture de la base de datos en `test_account.py`:**
    - Establecer la variable de entorno `TESTING` para que se use la base de datos temporal durante las pruebas:
      ```python
      import os
      os.environ['TESTING'] = '1'
      ```
-
+   ![](imagenes/e4.2.png)
 3. **Verificar en las pruebas:**
    - Ejecuta de nuevo todas las pruebas y asegúrate de que no se están escribiendo datos en `test.db`, sino en una base en memoria que se destruye al finalizar.
-
+   ![](imagenes/e4.3.png)
 
 ### Ejercicio 5: Refactorización y adición de funcionalidades
 
@@ -227,8 +228,11 @@ Extender la funcionalidad del modelo y, a su vez, la cobertura de pruebas.
      - Verifiquen que se lance una excepción si el nombre está vacío.
      - Verifiquen que se lance una excepción si el email tiene formato incorrecto.
      - Comprueben que no se lance excepción cuando los datos sean correctos.
-
+   ![](imagenes/e5.2.png)
 3. **Actualizar la Cobertura:**  
    - Ejecuta nuevamente `make test` y `make coverage_individual` para verificar que el nuevo método está completamente cubierto por pruebas.
-
+   - make test
+   ![](imagenes/e5.3.1.png)
+   - make coverage_individual
+   ![](imagenes/e5.3.2.png)
 
