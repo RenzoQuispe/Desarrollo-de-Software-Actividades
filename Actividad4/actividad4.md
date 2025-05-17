@@ -11,53 +11,53 @@ Con los comando que tiene es posible visualizar el historial de forma clara "git
 - ¿Qué beneficios ves en el uso de ramas para desarrollar nuevas características o corregir errores?  
 Orden en el desarrollo colaborativo, de tal manera que cada uno trabaja en su implementacion, para despues juntar dichas implementaciones. Tambien sirve como un desarrollo de prueba, si en dicha rama desarrollamos correctamente, incluimos los cambios a la rama master.
 - Realiza una revisión final del historial de commits para asegurarte de que todos los cambios se han registrado correctamente.  
-![](/imagenes/actividad4/ejercicio2_1.PNG)
+![](imagenes/ejercicio2_1.PNG)
 - Revisa el uso de ramas y merges para ver cómo Git maneja múltiples líneas de desarrollo.
-![](/imagenes/actividad4/ejercicio2_5.PNG) 
-![](/imagenes/actividad4/ejercicio3_2.PNG)
+![](imagenes/ejercicio2_5.PNG) 
+![](imagenes/ejercicio3_2.PNG)
 
 ### Ejercicio 1: Manejo avanzado de ramas y resolución de conflictos
-![](/imagenes/actividad4/ejercicio1_1.PNG)
-![](/imagenes/actividad4/ejercicio1_2.PNG)
-![](/imagenes/actividad4/ejercicio1_3.PNG)
-![](/imagenes/actividad4/ejercicio1_4.PNG)
+![](imagenes/ejercicio1_1.PNG)
+![](imagenes/ejercicio1_2.PNG)
+![](imagenes/ejercicio1_3.PNG)
+![](imagenes/ejercicio1_4.PNG)
 ### Ejercicio 2: Exploración y manipulación del historial de commits
-![](/imagenes/actividad4/ejercicio2_1.PNG)
-![](/imagenes/actividad4/ejercicio2_2.PNG)
-![](/imagenes/actividad4/ejercicio2_3.PNG)
-![](/imagenes/actividad4/ejercicio2_4.PNG)
-![](/imagenes/actividad4/ejercicio2_5.PNG)
+![](imagenes/ejercicio2_1.PNG)
+![](imagenes/ejercicio2_2.PNG)
+![](imagenes/ejercicio2_3.PNG)
+![](imagenes/ejercicio2_4.PNG)
+![](imagenes/ejercicio2_5.PNG)
 ### Ejercicio 3: Creación y gestión de ramas desde commits específicos
-![](/imagenes/actividad4/ejercicio3_1.PNG)
-![](/imagenes/actividad4/ejercicio3_2.PNG)
+![](imagenes/ejercicio3_1.PNG)
+![](imagenes/ejercicio3_2.PNG)
 ### Ejercicio 4: Manipulación y restauración de commits con git reset y git restore
-![](/imagenes/actividad4/ejercicio4_1.PNG)
-![](/imagenes/actividad4/ejercicio4_2.PNG)
+![](imagenes/ejercicio4_1.PNG)
+![](imagenes/ejercicio4_2.PNG)
 ### Ejercicio 5: Trabajo colaborativo y manejo de Pull Requests
  - Crear un nuevo repositorio remoto:
-  ![](/imagenes/actividad4/ejercicio5_1.png)
-  ![](/imagenes/actividad4/ejercicio5_2.png)
+  ![](imagenes/ejercicio5_1.png)
+  ![](imagenes/ejercicio5_2.png)
  - Crear una nueva rama para desarrollo de una característica:
-  ![](/imagenes/actividad4/ejercicio5_3.png)
+  ![](imagenes/ejercicio5_3.png)
  - Realizar cambios y enviar la rama al repositorio remoto:
-  ![](/imagenes/actividad4/ejercicio5_4.png)
+  ![](imagenes/ejercicio5_4.png)
  - Abrir un Pull Request:
-  ![](/imagenes/actividad4/ejercicio5_5.png)
+  ![](imagenes/ejercicio5_5.png)
  - Revisar y fusionar el Pull Request:
-  ![](/imagenes/actividad4/ejercicio5_6.png)
-  ![](/imagenes/actividad4/ejercicio5_7.png)
+  ![](imagenes/ejercicio5_6.png)
+  ![](imagenes/ejercicio5_7.png)
  - Eliminar la rama remota y local:
-  ![](/imagenes/actividad4/ejercicio5_8.png)
+  ![](imagenes/ejercicio5_8.png)
 ### Ejercicio 6: Cherry-Picking y Git Stash
  - Hacer cambios en main.py y confirmarlos:
-  ![](/imagenes/actividad4/ejercicio6_1.png)
+  ![](imagenes/ejercicio6_1.png)
  - Crear una nueva rama y aplicar el commit específico:
-  ![](/imagenes/actividad4/ejercicio6_2.png)
+  ![](imagenes/ejercicio6_2.png)
  - Guardar temporalmente cambios no confirmados
-  ![](/imagenes/actividad4/ejercicio6_3.png)
+  ![](imagenes/ejercicio6_3.png)
  - Aplicar los cambios guardados:
-  ![](/imagenes/actividad4/ejercicio6_4.png)
+  ![](imagenes/ejercicio6_4.png)
  - Revisar el historial y confirmar la correcta aplicación de los cambios:
-  ![](/imagenes/actividad4/ejercicio6_5.png)
+  ![](imagenes/ejercicio6_5.png)
 Presentación PPT:
-[Ver ppt de la exposicion](/presentaciones/DS_Actividad4.pdf)
+[Ver ppt de la exposicion](DS_Actividad4.pdf)

@@ -88,7 +88,7 @@ Automatiza desde que el desarrollador sube un cambio hasta que se despliega en p
 - Con Grafana mostramos los datos a tiempo real, se activan la alertas si hay errores
 - Un equipo se encarga del monitoreo constante
 #### - Presentar el flujo en un diagrama que incluya cada paso desde el commit hasta la visualización de métricas en tiempo real.
-![](/imagenes/DSFlujoTeorico1.drawio.png)
+![](imagenes/DSFlujoTeorico1.drawio.png)
 
 Presentación PPT:
-[Ver ppt de la exposicion](/presentaciones/DS_Actividad2.pdf)
+[Ver ppt de la exposicion](DS_Actividad2.pdf)

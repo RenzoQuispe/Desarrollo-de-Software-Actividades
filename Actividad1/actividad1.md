@@ -49,4 +49,4 @@ Principalemente la importancia de diseño y creacion de infraestructuras y uso d
 ---
 
 Presentación PPT:
-[Ver ppt de la exposicion](/presentaciones/DS_Actividad1.pdf)
+[Ver ppt de la exposicion](DS_Actividad1.pdf)

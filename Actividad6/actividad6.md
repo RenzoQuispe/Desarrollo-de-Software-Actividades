@@ -9,21 +9,21 @@ Aprender a usar los comandos `git rebase` y `git cherry-pick` para mantener un h
    - **Caso de uso**: Simplifica la depuración y facilita la comprensión del historial de commits.
 2. **Escenario de ejemplo:**
    - Crea un nuevo repositorio Git y dos ramas, main y new-feature:
-    ![](/imagenes/actividad6/parte1_2_1.png)
+    ![](imagenes/parte1_2_1.png)
    - Crea y cambia a la rama new-feature:
-    ![](/imagenes/actividad6/parte1_2_2.png)
+    ![](imagenes/parte1_2_2.png)
     **Pregunta:** Presenta el historial de ramas obtenida hasta el momento.
-    ![](/imagenes/actividad6/parte1_2_3.png)
+    ![](imagenes/parte1_2_3.png)
    Ahora, digamos que se han agregado nuevos commits a main mientras trabajabas en new-feature:
-    ![](/imagenes/actividad6/parte1_2_4.png)
+    ![](imagenes/parte1_2_4.png)
    Tu gráfico de commits ahora diverge (comprueba esto)
    > **Tarea**: Realiza el rebase de `new-feature` sobre `main` con los siguientes comandos: 
-    ![](/imagenes/actividad6/parte1_2_5.png)
+    ![](imagenes/parte1_2_5.png)
 3. **Revisión:**
    Después de realizar el rebase, visualiza el historial de commits con:
-   ![](/imagenes/actividad6/parte1_3.png)
+   ![](imagenes/parte1_3.png)
 4. **Momento de fusionar y completar el proceso de git rebase:**
-   ![](/imagenes/actividad6/parte1_4.png)
+   ![](imagenes/parte1_4.png)
    Cuando se realiza una fusión *fast-forward*, las HEADs de las ramas main y new-feature serán los commits correspondientes.
 
 #### Parte 2: **git cherry-pick para la integración selectiva de commit**
@@ -35,16 +35,16 @@ Aprender a usar los comandos `git rebase` y `git cherry-pick` para mantener un h
    Esta acción creará un nuevo commit en la rama main.
 
 2. **Escenario de ejemplo:**
-   ![](/imagenes/actividad6/parte2_2_1.png)
+   ![](imagenes/parte2_2_1.png)
     **Pregunta:** Muestra un diagrama de como se ven las ramas en este paso.
-    ![](/imagenes/actividad6/parte2_2_2.png)
+    ![](imagenes/parte2_2_2.png)
 
 3. **Tarea: Haz cherry-pick de un commit de add-base-documents a main:**
-   ![](/imagenes/actividad6/parte2_3.png)
+   ![](imagenes/parte2_3.png)
 
 4. **Revisión:**  
    Revisa el historial nuevamente:
-   ![](/imagenes/actividad6/parte2_4.png)
+   ![](imagenes/parte2_4.png)
    Después de que hayas realizado con éxito el cherry-pick del commit, se agregará un nuevo commit a tu rama actual (main en este ejemplo) y contendrá los cambios del commit cherry-picked. 
 
 ##### **Preguntas de discusión:**
@@ -77,10 +77,10 @@ Aprender a usar los comandos `git rebase` y `git cherry-pick` para mantener un h
    - Crea una rama feature, agrega nuevos commits, y luego realiza algunos commits adicionales en main.
    - Realiza un rebase de feature sobre main.
    - Finalmente, realiza una fusión fast-forward de feature con main.
-![](/imagenes/actividad6/ejerciciospracticos1_1.png)
+![](imagenes/ejerciciospracticos1_1.png)
    **Preguntas:**
    - ¿Qué sucede con el historial de commits después del rebase? 
-        ![](/imagenes/actividad6/ejerciciospracticos1_2.png)    
+        ![](imagenes/ejerciciospracticos1_2.png)    
    - ¿En qué situación aplicarías una fusión fast-forward en un proyecto ágil?
 
 2. **Cherry-pick para integración selectiva en un pipeline CI/CD**
@@ -93,7 +93,7 @@ Aprender a usar los comandos `git rebase` y `git cherry-pick` para mantener un h
    - Realiza un cherry-pick de esos commits desde feature a main.
    - Verifica que los commits cherry-picked aparezcan en main.
 
-   ![](/imagenes/actividad6/ejerciciospracticos2.png)
+   ![](imagenes/ejerciciospracticos2.png)
    
    **Preguntas:**
    - ¿Cómo utilizarías cherry-pick en un pipeline de CI/CD para mover solo ciertos cambios listos a producción?  
@@ -111,7 +111,7 @@ En esta fase del sprint, los equipos Scrum deciden qué historias de usuario van
 1. Crea un repositorio en Git.
 2. Crea una rama `main` donde estará el código base.
 3. Crea una rama por cada historia de usuario asignada al sprint, partiendo de la rama `main`.
-![](/imagenes/actividad6/ejercicioScrum1.png)
+![](imagenes/ejercicioScrum1.png)
 **Pregunta:** ¿Por qué es importante trabajar en ramas de funcionalidades separadas durante un sprint?
 
 #### **Fase 2: Desarrollo del sprint (sprint execution)**
@@ -121,7 +121,7 @@ A medida que los desarrolladores trabajan en sus respectivas historias de usuari
 **Instrucciones:**
 1. Haz algunos commits en main.
 2. Realiza un rebase de la rama `feature-user-story-1` para actualizar su base con los últimos cambios de main.
-![](/imagenes/actividad6/ejercicioScrum2.png)
+![](imagenes/ejercicioScrum2.png)
 **Pregunta:** ¿Qué ventajas proporciona el rebase durante el desarrollo de un sprint en términos de integración continua?
 
 #### **Fase 3: Revisión del sprint (sprint review)**
@@ -131,7 +131,7 @@ En esta fase, es posible que algunas funcionalidades estén listas para ser most
 **Instrucciones:**
 1. Realiza algunos commits en `feature-user-story-2`.
 2. Haz cherry-pick de los commits que estén listos para mostrarse a los stakeholders durante la revisión del sprint.
-![](/imagenes/actividad6/ejercicioScrum3.png)
+![](imagenes/ejercicioScrum3.png)
 
 **Pregunta:** ¿Cómo ayuda `git cherry-pick` a mostrar avances de forma selectiva en un sprint review?
 
@@ -142,9 +142,9 @@ Durante un sprint, pueden surgir conflictos al intentar integrar diferentes rama
 **Instrucciones:**
 1. Realiza cambios en `feature-user-story-1` y `feature-user-story-2` que resulten en conflictos.
 2. Intenta hacer merge de ambas ramas con main y resuelve los conflictos.
-![](/imagenes/actividad6/ejercicioScrum4_1.png)
+![](imagenes/ejercicioScrum4_1.png)
 Conflicto:
-![](/imagenes/actividad6/ejercicioScrum4_2.png)
+![](imagenes/ejercicioScrum4_2.png)
 **Pregunta**: ¿Cómo manejas los conflictos de fusión al final de un sprint? ¿Cómo puede el equipo mejorar la comunicación para evitar conflictos grandes?
 
 #### **Fase 5: Fase de desarrollo, automatización de integración continua (CI) con git rebase**
@@ -154,7 +154,7 @@ En un entorno CI, es común automatizar ciertas operaciones de Git para asegurar
 **Instrucciones:**
 1. Configura un hook `pre-push` que haga un rebase automático de la rama `main` sobre la rama de funcionalidad antes de que el push sea exitoso.
 2. Prueba el hook haciendo push de algunos cambios en la rama `feature-user-story-1`.
-![](/imagenes/actividad6/ejercicioScrum5.png)
+![](imagenes/ejercicioScrum5.png)
 
 **Pregunta**: ¿Qué ventajas y desventajas observas al automatizar el rebase en un entorno de CI/CD?
 
@@ -266,45 +266,45 @@ $ git tag v2.4.4 <commit>
 
 1. **Inicialización del proyecto y creación de ramas**
    - **Paso 1**: Crea un nuevo proyecto en tu máquina local.
-     ![](/imagenes/actividad6/ejemplo1_1.png)
+     ![](imagenes/ejemplo1_1.png)
    - **Paso 2**: Inicializa Git en tu proyecto.
-     ![](/imagenes/actividad6/ejemplo1_2.png)
+     ![](imagenes/ejemplo1_2.png)
    - **Paso 3**: Crea un archivo de texto llamado `archivo_colaborativo.txt` y agrega algún contenido inicial.
-     ![](/imagenes/actividad6/ejemplo1_3.png)
+     ![](imagenes/ejemplo1_3.png)
    - **Paso 4**: Agrega el archivo al área de staging y haz el primer commit.
-     ![](/imagenes/actividad6/ejemplo1_4.png)
+     ![](imagenes/ejemplo1_4.png)
    - **Paso 5**: Crea dos ramas activas: main y feature-branch.
-     ![](/imagenes/actividad6/ejemplo1_5.png)
+     ![](imagenes/ejemplo1_5.png)
    - **Paso 6**: Haz checkout a la rama feature-branch y realiza un cambio en el archivo `archivo_colaborativo.txt`.
-     ![](/imagenes/actividad6/ejemplo1_6.png)
+     ![](imagenes/ejemplo1_6.png)
    - **Paso 7**: Regresa a la rama main y realiza otro cambio en la misma línea del archivo `archivo_colaborativo.txt`.
-     ![](/imagenes/actividad6/ejemplo1_7.png)
+     ![](imagenes/ejemplo1_7.png)
 2. **Fusión y resolución de conflictos**
    - **Paso 1**: Intenta fusionar feature-branch en main. Se espera que surjan conflictos de fusión.
-     ![](/imagenes/actividad6/ejemplo2_1.png)
+     ![](imagenes/ejemplo2_1.png)
    - **Paso 2**: Usa `git status` para identificar los archivos en conflicto. Examina los archivos afectados y resuelve manualmente los conflictos, conservando las líneas de código más relevantes para el proyecto.
-     ![](/imagenes/actividad6/ejemplo2_2.png)
+     ![](imagenes/ejemplo2_2.png)
    - **Paso 3**: Una vez resueltos los conflictos, commitea los archivos y termina la fusión
-     ![](/imagenes/actividad6/ejemplo2_3.png)
+     ![](imagenes/ejemplo2_3.png)
 3. **Simulación de fusiones y uso de git diff**
    - **Paso 1**: Simula una fusión usando `git merge --no-commit --no-ff` para ver cómo se comportarían los cambios antes de realizar el commit.
-      ![](/imagenes/actividad6/ejemplo3.png)
+      ![](imagenes/ejemplo3.png)
 4. **Uso de git mergetool**
    - **Paso 1**: Configura git mergetool con una herramienta de fusión visual (puedes usar meld, vimdiff, o Visual Studio Code).
-     ![](/imagenes/actividad6/ejemplo4_1.png)
+     ![](imagenes/ejemplo4_1.png)
    - **Paso 2**: Usa la herramienta gráfica para resolver un conflicto de fusión.
-     ![](/imagenes/actividad6/ejemplo4_2.png)
+     ![](imagenes/ejemplo4_2.png)
 5. **Uso de git revert y git reset**
    - **Paso 1**: Simula la necesidad de revertir un commit en main debido a un error. Usa `git revert` para crear un commit que deshaga los cambios.
-      ![](/imagenes/actividad6/ejemplo5_1.png)
+      ![](imagenes/ejemplo5_1.png)
    - **Paso 2**: Realiza una prueba con `git reset --mixed` para entender cómo reestructurar el historial de commits sin perder los cambios no commiteados.
-      ![](/imagenes/actividad6/ejemplo5_2.png)
+      ![](imagenes/ejemplo5_2.png)
 6. **Versionado semántico y etiquetado**
    - **Paso 1**: Aplica versionado semántico al proyecto utilizando tags para marcar versiones importantes. 
-      ![](/imagenes/actividad6/ejemplo6.png)
+      ![](imagenes/ejemplo6.png)
 7. **Aplicación de git bisect para depuración**
    - **Paso 1**: Usa `git bisect` para identificar el commit que introdujo un error en el código.
-      ![](/imagenes/actividad6/ejemplo7.png)
+      ![](imagenes/ejemplo7.png)
 #### **Preguntas**
 
 1. **Ejercicio para git checkout --ours y git checkout --theirs**

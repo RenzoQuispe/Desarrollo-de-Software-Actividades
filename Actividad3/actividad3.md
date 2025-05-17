@@ -44,5 +44,6 @@
       Una organizacion grande necesita una nube mas personalizada y proteger sus datos, entonces una nube privada en la cual internamente es administrado por personal siguiendo las necesidades de la organizacion es mas adecuado.
    - (b) ¿Por qué una empresa podría verse afectada por el “provider lock-in”?  
       porque queda totalmente dependiente de un solo proveedor de nube, tener mas proveedores da mas libertad. 
+
 Presentación PPT:
-[Ver ppt de la exposicion](/presentaciones/DS_Actividad3.pdf)
+[Ver ppt de la exposicion](DS_Actividad3.pdf)

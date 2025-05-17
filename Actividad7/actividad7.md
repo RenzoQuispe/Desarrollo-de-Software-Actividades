@@ -57,15 +57,15 @@ El proyecto tiene la siguiente estructura de directorios:
 #### Instalación
 Sigue estos pasos para configurar el entorno y ejecutar el proyecto:
 1. **Clona el repositorio o descarga el código fuente**:
-    ![](/imagenes/actividad7/instalacion1.png)
+    ![](imagenes/instalacion1.png)
 2. **Crea y activa un entorno virtual llamado act9**:
-    ![](/imagenes/actividad7/instalacion2.png)
+    ![](imagenes/instalacion2.png)
 3. **Instala las dependencias necesarias**:
-    ![](/imagenes/actividad7/instalacion3.png)
+    ![](imagenes/instalacion3.png)
 
 ### Ejecutar las pruebas
 Para ejecutar las pruebas, utiliza el comando: behave
-![](/imagenes/actividad7/pruebas.png)
+![](imagenes/pruebas.png)
 Este comando buscará automáticamente los archivos `.feature` dentro de la carpeta `features` y ejecutará los escenarios definidos.
 
 ### Detalles del proyecto
@@ -104,7 +104,7 @@ Característica: Comportamiento del Estómago
     Cuando espero "dos horas y treinta minutos"
     Entonces mi estómago debería gruñir
 ```
-![](/imagenes/actividad7/codigos/belly_feature.png)
+![](imagenes/codigos/belly_feature.png)
 #### Archivo `features/steps/steps.py`
 
 Contiene las definiciones de los pasos correspondientes a los escenarios en `belly.feature`. Se encarga de implementar la lógica detrás de cada paso.
@@ -165,7 +165,7 @@ def step_then_belly_should_growl(context):
 def step_then_belly_should_not_growl(context):
     assert not context.belly.esta_gruñendo(), "Se esperaba que el estómago no gruñera, pero lo hizo."
 ```
-![](/imagenes/actividad7/codigos/steps_py.png)
+![](imagenes/codigos/steps_py.png)
 #### Archivo `features/environment.py`
 
 Inicializa el contexto antes de cada escenario, creando una nueva instancia de `Belly`.
@@ -176,7 +176,7 @@ from src.belly import Belly
 def before_scenario(context, scenario):
     context.belly = Belly()
 ```
-![](/imagenes/actividad7/codigos/enviroment_py.png)
+![](imagenes/codigos/enviroment_py.png)
 #### Archivo `src/belly.py`
 
 Implementa la lógica de la clase `Belly`, que simula el comportamiento del estómago.
@@ -197,10 +197,10 @@ class Belly:
         # El estómago gruñe si ha esperado al menos 1.5 horas y ha comido más de 10 pepinos
         return self.tiempo_esperado >= 1.5 and self.pepinos_comidos > 10
 ```
-![](/imagenes/actividad7/codigos/belly_py.png)
+![](imagenes/codigos/belly_py.png)
 ---
 Estrucura Inicial de Archivos
-![](/imagenes/actividad7/estructuraArchivosInicial.png)
+![](imagenes/estructuraArchivosInicial.png)
 
 #### Ejercicios
 
@@ -335,15 +335,15 @@ Ese **resultado verde** (todas las pruebas pasando) es el **objetivo final** de 
    - "90 minutos"
    - "3600 segundos"
    - **Variaciones** que incluyan segundos (por ejemplo, `"1 hora, 30 minutos y 45 segundos"`).
-   ![](/imagenes/actividad7/ejercicio1/ejercicio1.1.png)
+   ![](imagenes/ejercicio1/ejercicio1.1.png)
 2. **Implementa** un escenario de prueba en Gherkin (`belly.feature`) que valide que el estómago gruñe o no según estas variaciones de tiempo.
-   ![](/imagenes/actividad7/ejercicio1/ejercicio1.2.png)
+   ![](imagenes/ejercicio1/ejercicio1.2.png)
 3. **Considera** también crear pruebas unitarias con Pytest para la lógica de parsing (función que convierte el texto de tiempo en horas decimales).
-    ![](/imagenes/actividad7/ejercicio1/ejercicio1.3.png)
+    ![](imagenes/ejercicio1/ejercicio1.3.png)
 4. **En un entorno DevOps**:
    - Agrega la ejecución de `behave` y `pytest` en tu *pipeline* de CI/CD, de modo que al hacer push de los cambios se ejecuten automáticamente las pruebas.
-   ![](/imagenes/actividad7/ejercicio1/ejercicio1.4.png)
-   ![](/imagenes/actividad7/ejercicio1/ejercicio1.5.png)
+   ![](imagenes/ejercicio1/ejercicio1.4.png)
+   ![](imagenes/ejercicio1/ejercicio1.5.png)
 
 
 
@@ -352,16 +352,16 @@ Ese **resultado verde** (todas las pruebas pasando) es el **objetivo final** de 
 - Permitir que el sistema acepte cantidades fraccionarias de pepinos (decimales).
 **Instrucciones**  
 1. **Modifica** el sistema (la clase `Belly` y los steps en Behave) para que acepte entradas como `"0.5"`, `"2.75"`.
-   ![](/imagenes/actividad7/ejercicio2/ejercicio2.1.1.png)
-   ![](/imagenes/actividad7/ejercicio2/ejercicio2.1.2.png)
+   ![](imagenes/ejercicio2/ejercicio2.1.1.png)
+   ![](imagenes/ejercicio2/ejercicio2.1.2.png)
 2. **Implementa** un nuevo escenario en Gherkin donde se ingiera una cantidad fraccionaria y verifica el comportamiento.
-   ![](/imagenes/actividad7/ejercicio2/ejercicio2.2.png)
+   ![](imagenes/ejercicio2/ejercicio2.2.png)
 3. **Valida** que el sistema lance una excepción o error si se ingresa una cantidad negativa de pepinos.
-   ![](/imagenes/actividad7/ejercicio2/ejercicio2.3.png)
+   ![](imagenes/ejercicio2/ejercicio2.3.png)
 4. **Pruebas unitarias**:  
    - Cubre el caso de pepinos fraccionarios en `test_belly.py`.
    - Cubre también el caso de pepinos negativos (se espera un error).
-   ![](/imagenes/actividad7/ejercicio2/ejercicio2.4.png)
+   ![](imagenes/ejercicio2/ejercicio2.4.png)
 
 #### Ejercicio 3: **Soporte para idiomas múltiples (Español e Inglés)**
 
@@ -369,43 +369,43 @@ Ese **resultado verde** (todas las pruebas pasando) es el **objetivo final** de 
 - Aceptar descripciones de tiempo en distintos idiomas (español e inglés).
 **Instrucciones**  
 1. **Modifica** el parsing de tiempo para que reconozca palabras clave en inglés, además de español (por ejemplo, `"two hours"`, `"thirty minutes"`).
-![](/imagenes/actividad7/ejercicio3/ejercicio3.1.png)
+![](imagenes/ejercicio3/ejercicio3.1.png)
 2. **Escribe** al menos dos escenarios de prueba en Gherkin que usen tiempos en inglés.
-![](/imagenes/actividad7/ejercicio3/ejercicio3.2.png)
+![](imagenes/ejercicio3/ejercicio3.2.png)
 3. **Implementa** una función que convierta las palabras en inglés a valores numéricos (similar a la que se usa para el español).
-![](/imagenes/actividad7/ejercicio3/ejercicio3.1.png)
+![](imagenes/ejercicio3/ejercicio3.1.png)
 4. **En un pipeline DevOps**, podrías:
    - Dividir los escenarios en distintos *tags* (`@spanish`, `@english`) y ejecutar cada conjunto en etapas diferentes, o en paralelo.
-![](/imagenes/actividad7/ejercicio3/ejercicio3.4.1.png)
-![](/imagenes/actividad7/ejercicio3/ejercicio3.4.2.png)
+![](imagenes/ejercicio3/ejercicio3.4.1.png)
+![](imagenes/ejercicio3/ejercicio3.4.2.png)
 
 #### Ejercicio 4: **Manejo de tiempos aleatorios**
 **Objetivo**  
 - Permitir ingresar rangos de tiempo (por ejemplo, "entre 1 y 3 horas") y escoger un tiempo aleatorio dentro de ese rango.
 **Instrucciones**  
 1. **Crea** una función que, dada una expresión como "entre 1 y 3 horas", devuelva un valor aleatorio entre 1 y 3 horas.
-![](/imagenes/actividad7/ejercicio4/ejercicio4.1.png)
+![](imagenes/ejercicio4/ejercicio4.1.png)
 2. **Implementa** un escenario en Gherkin que verifique que, tras comer pepinos y esperar un tiempo aleatorio, el estómago puede gruñir.
-![](/imagenes/actividad7/ejercicio4/ejercicio4.2.png)
+![](imagenes/ejercicio4/ejercicio4.2.png)
 3. **Imprime** (en consola o logs) el tiempo aleatorio elegido para que el resultado sea rastreable en tu pipeline.
 4. **En un pipeline DevOps**:  
    - Considera utilizar un *seed* de aleatoriedad fijo para evitar *flakiness* (tests intermitentes).  
    - O, si manejas aleatoriedad real, acepta el riesgo de pruebas no deterministas y monitorea cuidadosamente.
-![](/imagenes/actividad7/ejercicio4/ejercicio4.3.png)
+![](imagenes/ejercicio4/ejercicio4.3.png)
 
 #### Ejercicio 5: **Validación de cantidades no válidas**
 **Objetivo**  
 - Manejar y reportar adecuadamente errores al ingresar cantidades no válidas.
 **Instrucciones**  
 1. **Añade** validaciones para evitar que el usuario ingrese < 0 pepinos o > 100 pepinos.
-![](/imagenes/actividad7/ejercicio5/ejercicio5.1.png)
+![](imagenes/ejercicio5/ejercicio5.1.png)
 2. **Modifica** la lógica para arrojar un error (excepción) si la cantidad no es válida.
-![](/imagenes/actividad7/ejercicio5/ejercicio5.5.png)
-![](/imagenes/actividad7/ejercicio5/ejercicio5.6.png)
+![](imagenes/ejercicio5/ejercicio5.5.png)
+![](imagenes/ejercicio5/ejercicio5.6.png)
 3. **Implementa** un escenario de prueba que verifique el comportamiento de error.
-![](/imagenes/actividad7/ejercicio5/ejercicio5.3.png)
+![](imagenes/ejercicio5/ejercicio5.3.png)
 4. **En tu pipeline**, verifica que la excepción se maneje y el test falle de manera controlada si el sistema no lanza la excepción esperada.
-![](/imagenes/actividad7/ejercicio5/ejercicio5.4.png)
+![](imagenes/ejercicio5/ejercicio5.4.png)
 
 
 #### Ejercicio 6: **Escalabilidad con grandes cantidades de pepinos**
@@ -413,41 +413,41 @@ Ese **resultado verde** (todas las pruebas pasando) es el **objetivo final** de 
 - Asegurar que el sistema no falle ni se ponga lento con cantidades y tiempos muy grandes.
 **Instrucciones**  
 1. **Añade** soporte para manejar cantidades de pepinos como 1000 (más allá del límite de validación anterior, o ajusta ese límite para pruebas internas).
-![](/imagenes/actividad7/ejercicio6/ejercicio6.1.png)
+![](imagenes/ejercicio6/ejercicio6.1.png)
 2. **Implementa** un escenario en Gherkin para comer 1000 pepinos y esperar 10 horas.
-![](/imagenes/actividad7/ejercicio6/ejercicio6.2.png)
+![](imagenes/ejercicio6/ejercicio6.2.png)
 3. **Verifica** que el sistema sigue comportándose correctamente (sin timeouts ni errores de rendimiento).
 4. **En un pipeline DevOps**:
    - Ejecuta pruebas de estrés o de larga duración (puedes simular) para garantizar la robustez.
    - Mide el tiempo de ejecución para asegurarte de que no aumente drásticamente.
-![](/imagenes/actividad7/ejercicio6/ejercicio6.3.png)
-![](/imagenes/actividad7/ejercicio6/ejercicio6.4.png)
+![](imagenes/ejercicio6/ejercicio6.3.png)
+![](imagenes/ejercicio6/ejercicio6.4.png)
 
 #### Ejercicio 7: **Descripciones de tiempo complejas**
 **Objetivo**  
 - Ampliar la lógica para manejar descripciones avanzadas tipo `"1 hora, 30 minutos y 45 segundos"`.
 **Instrucciones**  
 1. **Refuerza** la expresión regular y parsing para que soporte múltiples separadores (comas, "y", espacios, etc.).
-![](/imagenes/actividad7/ejercicio7/e7.1.png)
+![](imagenes/ejercicio7/e7.1.png)
 2. **Implementa** escenarios que cubran al menos 2-3 variaciones complejas en Gherkin.
-![](/imagenes/actividad7/ejercicio7/e7.2.png)
+![](imagenes/ejercicio7/e7.2.png)
 3. **Valida** que el total en horas sea exacto (suma de horas, minutos, segundos).
 4. **En un pipeline**:  
    - Puedes analizar la cobertura de pruebas (coverage) para asegurarte de que la nueva lógica de parsing está completamente testeada.
-  ![](/imagenes/actividad7/ejercicio7/e7.3.png)
+  ![](imagenes/ejercicio7/e7.3.png)
 
 #### Ejercicio 8: **De TDD a BDD – Convertir requisitos técnicos a pruebas en Gherkin**
 **Objetivo**  
 - Practicar el paso de una prueba unitaria técnica a un escenario BDD comprensible por el negocio.
 **Instrucciones**  
 1. **Escribe** un test unitario básico con Pytest que valide que si se han comido más de 10 pepinos y se espera 2 horas, el estómago gruñe.
-![](/imagenes/actividad7/ejercicio8/e8.1.png)
+![](imagenes/ejercicio8/e8.1.png)
 2. **Convierte** ese test unitario en un escenario Gherkin, con la misma lógica, pero más orientado al usuario.
 3. **Implementa** los pasos en Behave (si no existen).
-![](/imagenes/actividad7/ejercicio8/e8.2.png)
+![](imagenes/ejercicio8/e8.2.png)
 4. **En un pipeline DevOps**:
    - Ejecuta primero los tests unitarios (rápidos) y luego los tests de Behave (que pueden ser más lentos y de nivel de integración).
-   ![](/imagenes/actividad7/ejercicio8/e8.3.png)
+   ![](imagenes/ejercicio8/e8.3.png)
 
 #### Ejercicio 9: **Identificación de criterios de aceptación para historias de usuario**
 **Objetivo**  
@@ -458,12 +458,12 @@ Ese **resultado verde** (todas las pruebas pasando) es el **objetivo final** de 
 2. **Identifica** los criterios de aceptación (por ejemplo, cuántos pepinos y cuánto tiempo se debe esperar).
 El estomago gruño si solo si el numero de pepinos es mayor a 10 y el tiempo de espera es mayor o igual a 1 hora y media.
 3. **Escribe** escenarios Gherkin que reflejen esos criterios.
-   ![](/imagenes/actividad7/ejercicio9/e9.1.png)
+   ![](imagenes/ejercicio9/e9.1.png)
 4. **Implementa** los pasos en Behave.
-   ![](/imagenes/actividad7/ejercicio9/e9.2.png)
+   ![](imagenes/ejercicio9/e9.2.png)
 5. **En un pipeline**:
    - Asegúrate de vincular (por ejemplo, en GitLab Issues o GitHub Issues) los escenarios con la historia de usuario para tener *traceability* (rastreabilidad).
-   ![](/imagenes/actividad7/ejercicio9/e9.3.png)
+   ![](imagenes/ejercicio9/e9.3.png)
 
 
 #### Ejercicio 10: **Escribir pruebas unitarias antes de escenarios BDD**
@@ -476,8 +476,8 @@ El estomago gruño si solo si el numero de pepinos es mayor a 10 y el tiempo de 
 4. **En un pipeline**:  
    - Ejecución secuencial: 1) Pytest, 2) Behave.  
    - O en etapas separadas para un mejor feedback.
-![](/imagenes/actividad7/ejercicio10/e10.1.png)
-![](/imagenes/actividad7/ejercicio10/e10.2.png)
+![](imagenes/ejercicio10/e10.1.png)
+![](imagenes/ejercicio10/e10.2.png)
 
 #### Ejercicio 11: **Refactorización guiada por TDD y BDD**
 **Objetivo**  
@@ -485,14 +485,14 @@ El estomago gruño si solo si el numero de pepinos es mayor a 10 y el tiempo de 
 **Instrucciones**  
 1. **Elige** una funcionalidad ya existente (por ejemplo, `esta_gruñendo()`).
 2. **Escribe** (o asegura que existen) pruebas unitarias que cubran los casos clave. 
-![](/imagenes/actividad7/ejercicio11/11.1.png) 
+![](imagenes/ejercicio11/11.1.png) 
 3. **Refactoriza** el código (`Belly` o funciones auxiliares) para mejorar eficiencia, legibilidad o reducir duplicación.
 4. **Valida** que todas las pruebas unitarias y escenarios BDD siguen pasando sin cambios.
-![](/imagenes/actividad7/ejercicio11/11.2.png)
+![](imagenes/ejercicio11/11.2.png)
 5. **En un pipeline**:
    - Activa la medición de **coverage** para asegurarte de que la refactorización no rompa funcionalidades no cubiertas.
-![](/imagenes/actividad7/ejercicio11/11.3.png)
-![](/imagenes/actividad7/ejercicio11/11.4.png)
+![](imagenes/ejercicio11/11.3.png)
+![](imagenes/ejercicio11/11.4.png)
 
 #### Ejercicio 12: **Ciclo completo de TDD a BDD – Añadir nueva funcionalidad**
 **Objetivo**  
@@ -502,10 +502,10 @@ El estomago gruño si solo si el numero de pepinos es mayor a 10 y el tiempo de 
 2. **Escribe** primero la prueba unitaria.
 3. **Conviértelo** en una historia de usuario y escribe el escenario BDD.
 4. **Implementa** y verifica que tanto la prueba unitaria como el escenario Gherkin pasen.
-![](/imagenes/actividad7/ejercicio12/12.1.png)
+![](imagenes/ejercicio12/12.1.png)
 5. **En tu pipeline**, revisa que no haya *regresiones* en otros tests.
-![](/imagenes/actividad7/ejercicio12/12.2.png)
-![](/imagenes/actividad7/ejercicio12/12.3.png)
+![](imagenes/ejercicio12/12.2.png)
+![](imagenes/ejercicio12/12.3.png)
 #### Ejercicio 13: **Añadir criterios de aceptación claros**
 **Objetivo**  
 - Definir con precisión los criterios de aceptación de una nueva funcionalidad y plasmarlos en Gherkin.
@@ -515,8 +515,8 @@ El estomago gruño si solo si el numero de pepinos es mayor a 10 y el tiempo de 
 3. **Convierte** esos criterios en escenarios BDD.
 4. **Implementa** los pasos.  
 5. **En un pipeline**, agrupa los escenarios bajo un mismo *tag* (`@criterio_nuevo`) para ejecutarlos juntos.
-![](/imagenes/actividad7/ejercicio13/13.1.png)
-![](/imagenes/actividad7/ejercicio13/13.2.png)
+![](imagenes/ejercicio13/13.1.png)
+![](imagenes/ejercicio13/13.2.png)
   
 #### Ejercicio 14: **Integración con Mocking, Stubs y Fakes (para DevOps)**
 **Objetivo**  
@@ -524,14 +524,14 @@ El estomago gruño si solo si el numero de pepinos es mayor a 10 y el tiempo de 
 **Instrucciones**  
 1. **Crea** un archivo `clock.py` (por ejemplo) con una función `get_current_time()`.
 2. **Modifica** `Belly` para aceptar un `clock_service` opcional que se inyecta.
-![](/imagenes/actividad7/ejercicio14/14.1.png)
-![](/imagenes/actividad7/ejercicio14/14.2.png)
+![](imagenes/ejercicio14/14.1.png)
+![](imagenes/ejercicio14/14.2.png)
 3. **Crea** un test unitario con Pytest que use `unittest.mock` para simular el paso del tiempo.
-![](/imagenes/actividad7/ejercicio14/14.3.png)
+![](imagenes/ejercicio14/14.3.png)
 4. **En Behave**, usa `environment.py` para inyectar un mock o stub del reloj en el `before_scenario`.
 5. **En un pipeline DevOps**:
    - Asegúrate de no depender de la hora real, así evitas inestabilidad en las pruebas.
-![](/imagenes/actividad7/ejercicio14/14.4.png)
+![](imagenes/ejercicio14/14.4.png)
 
 
 
@@ -546,11 +546,11 @@ El estomago gruño si solo si el numero de pepinos es mayor a 10 y el tiempo de 
    - Generar reportes (HTML, JUnit) y publicarlos como *artifacts*.
 2. **Incluye** verificación de calidad de código (por ejemplo, flake8 o black).
 3. **Al aprobarse** el pipeline, **despliega** (si corresponde) tu aplicación o *script* a un entorno de staging/producción.
-![](/imagenes/actividad7/ejercicio15/15.1.png)
-![](/imagenes/actividad7/ejercicio15/15.2.png)
-![](/imagenes/actividad7/ejercicio15/15.3.png)
-![](/imagenes/actividad7/ejercicio15/15.4.png)
-![](/imagenes/actividad7/ejercicio15/15.5.png)
+![](imagenes/ejercicio15/15.1.png)
+![](imagenes/ejercicio15/15.2.png)
+![](imagenes/ejercicio15/15.3.png)
+![](imagenes/ejercicio15/15.4.png)
+![](imagenes/ejercicio15/15.5.png)
 ---
 
 #### Referencias
