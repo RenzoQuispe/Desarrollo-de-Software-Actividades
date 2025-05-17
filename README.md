@@ -13,9 +13,11 @@
 - [Actividad 10: Ejecutar pruebas con pytest](./Actividad10/)
 - [Actividad 11: Escribir aserciones en pruebas con pytest](./Actividad11/)
 - [Actividad 12: Revisión de fixtures en pruebas](./Actividad12/)
+- [Actividad 13: Objetos Mocking](./Actividad13/actividad13.md)
+- [Actividad 14: Factory y fakes](./Actividad14/actividad14.md)
 ### Practicas Dirigidas
-- [Practica Dirigida 1](./PracticaDirigida1/)
-- [Practica Dirigida 2](./PracticaDirigida2/)
-- [Practica Dirigida 3](./PracticaDirigida3/)
+- [Practica Dirigida 1: Exploración avanzada de Git y estructuras de datos (árbol de Merkle)](./PracticaDirigida1/)
+- [Practica Dirigida 2: Exploración y administración avanzada de Git mediante un script interactivo](./PracticaDirigida2/)
+- [Practica Dirigida 3: Herramientas del shell](./PracticaDirigida3/)
 
 
