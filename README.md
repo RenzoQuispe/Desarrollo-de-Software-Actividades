@@ -17,6 +17,9 @@
 - [Actividad 14: Factory y fakes](./Actividades10-16/Actividades/factories_fakes/actividad14.md)
 - [Actividad 15: Cobertura de pruebas](./Actividades10-16/Actividades/coverage_pruebas/actividad15.md)
 - [Actividad 16: Práctica del ciclo TDD](./Actividades10-16/Actividades/practica_tdd/actividad16.md)
+- [Actividad 17: Gestión ágil de proyectos con GitHub Projects, configuración de Kanban Board y creación de historias de usuario](https://github.com/Grupo-10-CC3S2/Gestion-Agil-Github)
+- [Actividad 18: Gestión ágil de sprints con GitHub, planificación, ejecución y cierre de Sprints](https://github.com/Grupo-10-CC3S2/Gestion-Agil-Github)
+- [Actividad 19: Orquestador local de entornos de desarrollo simulados con Terraform](./Actividad19/Actividad19.md)
 ### Practicas Dirigidas
 - [Practica Dirigida 1: Exploración avanzada de Git y estructuras de datos (árbol de Merkle)](./PracticaDirigida1/PracticaDirigida1.md)
 - [Practica Dirigida 2: Exploración y administración avanzada de Git mediante un script interactivo](./PracticaDirigida2/PracticaDirigida2.md)
