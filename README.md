@@ -21,6 +21,7 @@
 - [Actividad 18: Gestión ágil de sprints con GitHub, planificación, ejecución y cierre de Sprints](https://github.com/Grupo-10-CC3S2/Gestion-Agil-Github)
 - [Actividad 19: Orquestador local de entornos de desarrollo simulados con Terraform](./Actividad19/Actividad19.md)
 - [Actividad 20: Escribiendo infraestructura como código en un entorno local con Terraform](https://github.com/Grupo-10-CC3S2/Iac_orquestador_local/blob/main/Actividad/Actividad20.md)
+- [Actividad 21: Patrones para módulos de infraestructura](https://github.com/Grupo-10-CC3S2/local_iac_patterns/blob/main/Actividad/Actividad21.md)
 ### Practicas Dirigidas
 - [Practica Dirigida 1: Exploración avanzada de Git y estructuras de datos (árbol de Merkle)](./PracticaDirigida1/PracticaDirigida1.md)
 - [Practica Dirigida 2: Exploración y administración avanzada de Git mediante un script interactivo](./PracticaDirigida2/PracticaDirigida2.md)
