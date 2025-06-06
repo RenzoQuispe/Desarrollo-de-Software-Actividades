@@ -19,7 +19,7 @@
 - [Actividad 16: Práctica del ciclo TDD](./Actividades10-16/Actividades/practica_tdd/actividad16.md)
 - [Actividad 17: Gestión ágil de proyectos con GitHub Projects, configuración de Kanban Board y creación de historias de usuario](https://github.com/Grupo-10-CC3S2/Gestion-Agil-Github)
 - [Actividad 18: Gestión ágil de sprints con GitHub, planificación, ejecución y cierre de Sprints](https://github.com/Grupo-10-CC3S2/Gestion-Agil-Github)
-- [Actividad 19: Orquestador local de entornos de desarrollo simulados con Terraform](./Actividad19/Actividad19.md)
+- [Actividad 19: Orquestador local de entornos de desarrollo simulados con Terraform](https://github.com/Grupo-10-CC3S2/Proyecto_iac_local/blob/main/Actividad/Actividad19.md)
 - [Actividad 20: Escribiendo infraestructura como código en un entorno local con Terraform](https://github.com/Grupo-10-CC3S2/Iac_orquestador_local/blob/main/Actividad/Actividad20.md)
 - [Actividad 21: Patrones para módulos de infraestructura](https://github.com/Grupo-10-CC3S2/local_iac_patterns/blob/main/Actividad/Actividad21.md)
 ### Practicas Dirigidas
